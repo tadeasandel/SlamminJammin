@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7252722796296936224}
   - component: {fileID: 7252722796296936228}
   - component: {fileID: 3313080652910005403}
+  - component: {fileID: 974115467}
   - component: {fileID: 7252722796296936229}
   - component: {fileID: 7252722796296936230}
   m_Layer: 0
@@ -79,6 +80,18 @@ MonoBehaviour:
   HandInteractable: {fileID: 0}
   HandOnInteracted: {fileID: 0}
   canInteract: 1
+--- !u!114 &974115467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252722796296936225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264c99ae28ebf014397b78be63c454e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &7252722796296936229
 Rigidbody:
   m_ObjectHideFlags: 0
