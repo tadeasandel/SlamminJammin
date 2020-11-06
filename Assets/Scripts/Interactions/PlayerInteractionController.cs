@@ -3,22 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerInteractionController : MonoBehaviour
 {
   public float reachDistance;
+
+  public Image HandInteractable;
+  public Image HandOnInteracted;
+
+  public bool canInteract = true;
+
+  private void Start()
+  {
+    HandOnInteracted.gameObject.SetActive(false);
+  }
 
   void Update()
   {
     IInteractableObject currentInteraction = GetCurrentInteraction();
     if (currentInteraction != null)
     {
-      Debug.LogError("got interaction " + currentInteraction.ToString());
-      if (Input.GetKeyDown(KeyCode.Mouse0) && !currentInteraction.IsUsed())
+      if (canInteract)
+      {
+        HandInteractable.gameObject.SetActive(true);
+      }
+
+      if (Input.GetKeyDown(KeyCode.Mouse0) && !currentInteraction.IsUsed() && canInteract)
       {
         currentInteraction.Interact();
+        StartCoroutine(ShowInteractHandThenHide());
       }
     }
+    else
+    {
+        HandInteractable.gameObject.SetActive(false);
+    }
+  }
+
+  private IEnumerator ShowInteractHandThenHide()
+  {
+    canInteract = false;
+    HandOnInteracted.gameObject.SetActive(true);
+    yield return new WaitForSecondsRealtime(0.1f);
+    HandOnInteracted.gameObject.SetActive(false);
+    canInteract = true;
   }
 
   private IInteractableObject GetCurrentInteraction()
