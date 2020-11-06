@@ -9,23 +9,25 @@ public class MenuManager : MonoBehaviour
 {
     public TextMeshProUGUI text_novahra;
     public TextMeshProUGUI text_pressButton;
-    public Image button;
-
-   
+  
+    public List<Image> button;
     protected bool prvnistart;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         prvnistart = true;
 
-
+        for (int i = 0; i < 3; i++)
+        {
+            button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, 0);
+        }
     }
 
   void Update()
   {
     if (Input.anyKeyDown)
     {
-      if (Input.GetKeyDown(KeyCode.Escape) && prvnistart)
+      if (Input.anyKeyDown && prvnistart)
       {
         StartCoroutine(Fade());
       }
@@ -49,28 +51,32 @@ public class MenuManager : MonoBehaviour
         while (currentValue >=endValue)
         {
             currentValue -= Time.deltaTime;
-            // text_novahra
+        
             text_novahra.alpha = currentValue;
             Debug.LogError("probehlo");
             text_pressButton.alpha = currentValue;
             yield return null;
         }
        
-        //prvnistart = false;
+       
         
     }
     IEnumerator FadeIn(float startValue, float endValue)
     {
         float currentValue = startValue;
-        while (currentValue >= endValue)
+
+        while (currentValue <= endValue)
         {
             currentValue += Time.deltaTime;
-            
-            button.color =  new Color(button.color.r, button.color.g, button.color.b, currentValue);
-           
+
+            for (int i = 0; i < 3; i++)
+            {
+                button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, currentValue);
+
+            }
             yield return null;
         }
-
+        prvnistart = false;
     }
 
 }
