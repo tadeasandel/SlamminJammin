@@ -7,12 +7,6 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
-<<<<<<< Updated upstream
-  void Start()
-  {
-
-  }
-=======
     public TextMeshProUGUI text_novahra;
     public TextMeshProUGUI text_pressButton;
     public Image button;
@@ -26,23 +20,18 @@ public class MenuManager : MonoBehaviour
 
 
     }
->>>>>>> Stashed changes
 
   void Update()
   {
     if (Input.anyKeyDown)
     {
-<<<<<<< Updated upstream
-
+      if (Input.GetKeyDown(KeyCode.Escape) && prvnistart)
+      {
+        StartCoroutine(Fade());
+      }
     }
   }
-=======
-        if (Input.GetKeyDown(KeyCode.Escape)&&prvnistart)
-        {
-            StartCoroutine(Fade());
-        }
         
-    }
     IEnumerator Fade()
     {
         yield return StartCoroutine(FadeOut(1, 0));
@@ -84,5 +73,4 @@ public class MenuManager : MonoBehaviour
 
     }
 
->>>>>>> Stashed changes
 }
