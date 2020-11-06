@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SwitchButton : MonoBehaviour, IInteractableObject
 {
-  public bool currentState;
+  public bool isActive;
 
   public void Interact()
   {
-    Debug.LogError("setting state to " + currentState);
-    currentState = !currentState;
+    Debug.LogError("setting state to " + isActive);
+    isActive = !isActive;
   }
 
   public bool IsUsed()

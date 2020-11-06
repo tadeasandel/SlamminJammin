@@ -1,18 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelOne : MonoBehaviour
+public class LevelOne : StateBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  public override void StartState(Action onStateFinishedCallback)
+  {
+    base.StartState(onStateFinishedCallback);
+  }
 }

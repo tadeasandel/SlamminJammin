@@ -23,6 +23,11 @@ public class StateBase : MonoBehaviour
     objectivesInOrder[currentObjetiveIndex].EnableObjective(OnObjectiveCompleted);
   }
 
+  public virtual void EndState(Action onStateEnded)
+  {
+    onStateFinishedCallback();
+  }
+
   public virtual void OnObjectiveCompleted()
   {
     if (objectivesInOrder.Count <= currentObjetiveIndex + 1)
@@ -43,11 +48,6 @@ public class StateBase : MonoBehaviour
       meshrenderer.material.color = new Color(meshrenderer.material.color.r, meshrenderer.material.color.g, meshrenderer.material.color.b, alpha);
       yield return null;
     }
-  }
-
-  public virtual void EndState(Action onStateEnded)
-  {
-    onStateFinishedCallback();
   }
 
   public virtual void UpdateObjectiveState()
