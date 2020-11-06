@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 271029258}
   - component: {fileID: 271029257}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,7 +373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 294, y: 138}
+  m_AnchoredPosition: {x: 8, y: -107}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271029257
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 342002581}
   - component: {fileID: 342002580}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Button 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -584,7 +584,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.12744, y: -226}
+  m_AnchoredPosition: {x: 3, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342002580
@@ -919,7 +919,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_novahra: {fileID: 1327810179}
   text_pressButton: {fileID: 1407861123}
-  button: {fileID: 271029258}
+  button:
+  - {fileID: 271029258}
+  - {fileID: 1816379977}
+  - {fileID: 342002581}
 --- !u!1 &1327810177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,7 +1477,7 @@ GameObject:
   - component: {fileID: 1816379977}
   - component: {fileID: 1816379976}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,7 +1500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.12744, y: -226}
+  m_AnchoredPosition: {x: 3, y: -175}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816379976
