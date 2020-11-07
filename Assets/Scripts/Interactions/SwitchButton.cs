@@ -8,8 +8,10 @@ public class SwitchButton : MonoBehaviour, IInteractableObject
 
   public void Interact()
   {
-    Debug.LogError("setting state to " + isActive);
-    isActive = !isActive;
+       Debug.LogError("setting state to " + isActive);
+        isActive = !isActive;
+      
+       
   }
 
   public bool IsUsed()

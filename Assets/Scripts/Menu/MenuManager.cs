@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     int clickNumber;
 
     public List<Image> button;
-    public List<TextMeshProUGUI> button_text;
+   
     protected bool firstStart;
  
     void Start()
@@ -26,14 +26,14 @@ public class MenuManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, 0);
-            button_text[i].alpha = 0;
+            
         }
     }
 
    public void Button_start()
     {
         button[0].color = Color.Lerp(Color.white, Color.clear, 1);
-        button_text[0].alpha = 0;
+        
     }
     public void Button_Option_click()
     {
@@ -115,7 +115,7 @@ public class MenuManager : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, currentValue);
-                button_text[i].alpha = currentValue;
+               
             }
             yield return null;
         }
