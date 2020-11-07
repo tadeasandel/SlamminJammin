@@ -11,9 +11,4 @@ public class SwitchInteraction : InteractionBase
     base.Interact();
     isActive = !isActive;
   }
-
-  public override bool IsUsed()
-  {
-    return false;
-  }
 }
