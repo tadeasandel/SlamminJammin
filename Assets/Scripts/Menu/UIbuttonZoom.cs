@@ -5,30 +5,44 @@ using UnityEngine;
 public class UIbuttonZoom : MonoBehaviour
 {
     public List<GameObject> btn;
+
+    public List<InteractionClockHand> dezoomScrVar;
     public InteractionClockHand dezoomScr;
-    public InteractionClockHand dezoomScr2;
+
+    public List<GameObject> checkHandOneVar;
     public GameObject checkHandOne;
+
+    public List<GameObject> checkHandTwoVar;
     public GameObject checkHandTwo;
+
+
     public List<bool> isDone;
-    public int arw;
+    public int clock;
+   
     
     // Start is called before the first frame update
     private void Awake()
     {
-        isDone[arw] = false;
-
-    }
-    void ARW()
-    {
-        
+        for (int i = 0; i < 2; i++)
+        {
+            isDone[i] = false;
+        }
        
 
     }
 
+    void selectClock()
+    {
+        dezoomScr = dezoomScrVar[clock];
+        checkHandOne= checkHandOneVar[clock];
+        checkHandTwo= checkHandTwoVar[clock];
+    }
+    
+
     // Update is called once per frame
     public void Dezoom()
     {
-        if (!isDone[arw])
+        if (!isDone[clock])
         {
             checkHandOne.transform.rotation = new Quaternion(checkHandOne.transform.rotation.x, checkHandOne.transform.rotation.y,0, checkHandOne.transform.rotation.w) ;
             checkHandTwo.transform.rotation = new Quaternion(checkHandTwo.transform.rotation.x, checkHandTwo.transform.rotation.y, 0, checkHandTwo.transform.rotation.w);
@@ -48,8 +62,8 @@ public class UIbuttonZoom : MonoBehaviour
                 {
                     btn[i].SetActive(false);
                 }
-                isDone[arw] = true;
-                dezoomScr.isDone = isDone[arw];
+                isDone[clock] = true;
+                dezoomScr.isDone = isDone[clock];
             }
           
 
