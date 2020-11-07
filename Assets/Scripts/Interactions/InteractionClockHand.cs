@@ -19,7 +19,7 @@ public class InteractionClockHand : InteractionBase
   public float timeCorountine;
   public List<Image> btn;
 
-  public bool isZoomedIn;
+  public float transitionTime = 1;
 
   void Awake()
   {
@@ -41,7 +41,7 @@ public class InteractionClockHand : InteractionBase
   }
   IEnumerator Switch()
   {
-    yield return StartCoroutine(CameraZoom(Maincamera, cameraTarget, timeCorountine));
+    yield return StartCoroutine(CameraZoom(Maincamera, cameraTarget, timeCorountine, transitionTime));
     StartCoroutine(FadeOut(1, 0));
 
 
@@ -76,7 +76,7 @@ public class InteractionClockHand : InteractionBase
     return false;
   }
 
-  IEnumerator CameraZoom(GameObject startPosition, GameObject endPosition, float time)
+  IEnumerator CameraZoom(GameObject startPosition, GameObject endPosition, float timeDelay, float coroutineDelay)
   {
     Debug.LogError("probehlo_spusteni");
     cameraRotation.isRotationPaused = isActive;
@@ -86,14 +86,16 @@ public class InteractionClockHand : InteractionBase
 
 
     Transform currentTransform = startPosition.transform;
-    while (!isZoomedIn)
+    float currentTime = 0;
+    while (coroutineDelay >= currentTime)
     {
-      currentTransform.position = new Vector3(Mathf.Lerp(currentTransform.position.x, endPosition.transform.position.x, time),
-        Mathf.Lerp(currentTransform.position.y, endPosition.transform.position.y, time),
-        Mathf.Lerp(currentTransform.position.z, endPosition.transform.position.z, time));
-      currentTransform.rotation = Quaternion.Euler(Mathf.Lerp(currentTransform.rotation.x, endPosition.transform.rotation.x, time),
-  Mathf.Lerp(currentTransform.rotation.y, endPosition.transform.rotation.y, time),
-  Mathf.Lerp(currentTransform.rotation.z, endPosition.transform.rotation.z, time));
+      currentTransform.position = new Vector3(Mathf.Lerp(currentTransform.position.x, endPosition.transform.position.x, timeDelay),
+        Mathf.Lerp(currentTransform.position.y, endPosition.transform.position.y, timeDelay),
+        Mathf.Lerp(currentTransform.position.z, endPosition.transform.position.z, timeDelay));
+      currentTransform.rotation = Quaternion.Euler(Mathf.Lerp(currentTransform.rotation.x, endPosition.transform.rotation.x, timeDelay),
+  Mathf.Lerp(currentTransform.rotation.y, endPosition.transform.rotation.y, timeDelay),
+  Mathf.Lerp(currentTransform.rotation.z, endPosition.transform.rotation.z, timeDelay));
+      currentTime += Time.deltaTime;
       yield return null;
     }
     Debug.LogError("cor finished");
@@ -117,22 +119,5 @@ public class InteractionClockHand : InteractionBase
     {
       Debug.Log("jop");
     }*/
-  }
-
-  private void OnTriggerEnter(Collider other)
-  {
-    if (other.gameObject == Camera.main.gameObject)
-    {
-      Debug.LogError("trigger enter with camera zoom pos");
-      isZoomedIn = true;
-    }
-  }
-
-  private void OnTriggerExit(Collider other)
-  {
-    if (other.gameObject == Camera.main.gameObject)
-    {
-      isZoomedIn = false;
-    }
   }
 }
