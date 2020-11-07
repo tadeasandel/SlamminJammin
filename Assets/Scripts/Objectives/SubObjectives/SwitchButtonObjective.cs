@@ -14,13 +14,14 @@ public class SwitchButtonObjective : ObjectiveBase
     switchButton = GetComponent<SwitchInteraction>();
   }
 
-  public override void Update()
+  public void Update()
   {
-    base.Update();
+    if (!gameObject.activeSelf) { return; }
+    if (isObjectiveDone) { return; }
     if (switchButton.isActive)
     {
       isObjectiveDone = true;
-      onObjectiveCompletedCallback();
+      FinishObjective();
     }
   }
 }

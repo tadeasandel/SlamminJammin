@@ -5,14 +5,24 @@ using UnityEngine;
 [RequireComponent(typeof(StateSwitchInteraction))]
 public class StateManager : MonoBehaviour
 {
-  public List<List<GameObject>> gameStates;
+  public List<GameObject> firstState;
+  public List<GameObject> secondState;
+  public List<GameObject> thirdState;
+
+  private List<List<GameObject>> gameStates;
 
   [Range(0,2)]
   int currentStateIndex = 0;
 
   public void StartGame()
   {
+    gameStates = new List<List<GameObject>>();
+    gameStates.Add(firstState);
+    gameStates.Add(secondState);
+    gameStates.Add(thirdState);
     SetStateVisibility(currentStateIndex, true);
+    SetStateVisibility(1, false);
+    SetStateVisibility(2, false);
   }
 
   public void SetStateVisibility(int index, bool isVisible)

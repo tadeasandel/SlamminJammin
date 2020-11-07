@@ -7,8 +7,6 @@ public class MainObjectiveBase : MonoBehaviour
 {
   public List<ObjectiveBase> subObjectives;
 
-  public List<GameObject> objectsInState;
-
   public bool isMainObjectiveCompleted;
 
   private ObjectivesManager objectivesManager;
@@ -31,6 +29,11 @@ public class MainObjectiveBase : MonoBehaviour
         return;
       }
     }
+    FinishObjective();
+  }
+
+  public virtual void FinishObjective()
+  {
     isMainObjectiveCompleted = true;
     objectivesManager.CheckObjectives();
   }

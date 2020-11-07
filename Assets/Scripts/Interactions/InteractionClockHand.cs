@@ -42,7 +42,7 @@ public class InteractionClockHand : InteractionBase
     if(isActive) { return; }
     base.Interact();
     isActive = true;
-    isReady = false;
+    isDisabled = true;
     StartCoroutine(Switch());
 
   }
@@ -154,7 +154,7 @@ public class InteractionClockHand : InteractionBase
         }
 
         isActive = false;
-        isReady = true ;
+        isDisabled = false;
 
         currentTransform.transform.position = CameraSavePosition;
         Debug.LogError("pZapnutíOdzoomui");

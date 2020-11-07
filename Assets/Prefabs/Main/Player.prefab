@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4b821af730bd54da2821dc7ed1ccca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reachDistance: 15
+  reachDistance: 100
   HandInteractable: {fileID: 0}
   HandOnInteracted: {fileID: 0}
   canInteract: 1

@@ -10,11 +10,11 @@ public class InteractionBase : MonoBehaviour, IInteractableObject
     gameObject.layer = 8;
   }
 
-  public virtual bool isReady { get; set; }
+  public virtual bool isDisabled { get; set; }
 
   public virtual void Interact()
   {
-    if (!isReady) { return; }
+    if (isDisabled) { return; }
   }
 
   public virtual bool IsUsed()

@@ -19,11 +19,6 @@ public class ClockObjective : ObjectiveBase
   {
     base.InitObjective(mainObjectiveBase);
     clockInteraction = GetComponent<ClockInteraction>();
-    IInteractableObject[] interactions = GetComponentsInChildren<IInteractableObject>();
-    foreach (IInteractableObject interaction in interactions)
-    {
-      interaction.isReady = true;
-    }
   }
 
     public bool IsTimeCorect()

@@ -2,7 +2,7 @@
 
 public interface IInteractableObject
 {
-  bool isReady { get; set; }
+  bool isDisabled { get; set; }
 
   bool IsUsed();
   void Interact();

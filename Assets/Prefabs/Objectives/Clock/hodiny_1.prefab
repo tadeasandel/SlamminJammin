@@ -285,7 +285,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5724327142891260120}
-  - component: {fileID: 2620164893816114652}
   - component: {fileID: 8956198678977537958}
   m_Layer: 0
   m_Name: hodiny_raficka_dlouha
@@ -309,27 +308,6 @@ Transform:
   m_Father: {fileID: 1306953602503272380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2620164893816114652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871131520006751277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59bf196f9143314c8bf3696b3508562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotationSpeed: 55
-  isActive: 0
-  cameraRotation: {fileID: 0}
-  movementController: {fileID: 0}
-  minimalRotation: -0.42
-  maximalRotation: -0.55
-  timeCorountine: 0
-  btn: []
-  transitionTime: 1
 --- !u!65 &8956198678977537958
 BoxCollider:
   m_ObjectHideFlags: 0

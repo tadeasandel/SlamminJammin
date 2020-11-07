@@ -9,11 +9,11 @@ public class StateSwitchInteraction : MonoBehaviour, IInteractableObject
 
   private void Start()
   {
+    gameObject.layer = 8;
     stateManager = GetComponent<StateManager>();
-    isReady = true;
   }
 
-  public bool isReady { get; set; }
+  public bool isDisabled { get; set; }
 
   public void Interact()
   {

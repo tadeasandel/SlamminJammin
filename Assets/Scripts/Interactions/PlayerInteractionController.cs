@@ -26,7 +26,7 @@ public class PlayerInteractionController : MonoBehaviour
   void Update()
   {
     IInteractableObject currentInteraction = GetCurrentInteraction();
-    if (currentInteraction != null && currentInteraction.isReady)
+    if (currentInteraction != null && !currentInteraction.isDisabled)
     {
       if (canInteract)
       {
