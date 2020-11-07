@@ -2,33 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(StateSwitchInteraction))]
 public class StateManager : MonoBehaviour
 {
-  public List<StateBase> gameStates;
+  public List<List<GameObject>> gameStates;
 
+  [Range(0,2)]
   int currentStateIndex = 0;
 
-  private void Start()
+  public void StartGame()
   {
-    gameStates[currentStateIndex].StartState(TransitionToNextState);
+    SetStateVisibility(currentStateIndex, true);
   }
 
-  public void TransitionToNextState()
+  public void SetStateVisibility(int index, bool isVisible)
   {
-    if (gameStates.Count <= currentStateIndex + 1)
+    foreach (GameObject objectToSet in gameStates[index])
     {
-      FinishGame();
-      return;
+      objectToSet.SetActive(isVisible);
     }
-    gameStates[currentStateIndex].EndState(() =>
+  }
+
+  public void SwitchObjective()
+  {
+    SetStateVisibility(currentStateIndex, false);
+    if (currentStateIndex == 2)
+    {
+      currentStateIndex = 0;
+    }
+    else
     {
       currentStateIndex++;
-      gameStates[currentStateIndex].StartState(TransitionToNextState);
-    });
-  }
-
-  public void FinishGame()
-  {
-    Debug.LogError("game finished");
+    }
+    SetStateVisibility(currentStateIndex, true);
   }
 }

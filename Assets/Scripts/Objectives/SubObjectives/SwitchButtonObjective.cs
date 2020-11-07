@@ -8,16 +8,15 @@ public class SwitchButtonObjective : ObjectiveBase
 {
   SwitchInteraction switchButton;
 
-  public override void EnableObjective(Action onObjectiveCompletedCallback)
+  public override void InitObjective(MainObjectiveBase mainObjectiveBase)
   {
-    base.EnableObjective(onObjectiveCompletedCallback);
+    base.InitObjective(mainObjectiveBase);
     switchButton = GetComponent<SwitchInteraction>();
   }
 
-  private void Update()
+  public override void Update()
   {
-    if(!isObjectiveStarted) { return; }
-    if(isObjectiveDone) { return; }
+    base.Update();
     if (switchButton.isActive)
     {
       isObjectiveDone = true;

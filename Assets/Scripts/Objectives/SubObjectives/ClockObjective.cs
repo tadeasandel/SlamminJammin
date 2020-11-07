@@ -15,10 +15,9 @@ public class ClockObjective : ObjectiveBase
 
   public HourTime correctClockTime;
 
-  public override void EnableObjective(Action onObjectiveCompletedCallback)
+  public override void InitObjective(MainObjectiveBase mainObjectiveBase)
   {
-    Debug.LogError("clock objective enabled");
-    base.EnableObjective(onObjectiveCompletedCallback);
+    base.InitObjective(mainObjectiveBase);
     clockInteraction = GetComponent<ClockInteraction>();
     IInteractableObject[] interactions = GetComponentsInChildren<IInteractableObject>();
     foreach (IInteractableObject interaction in interactions)
@@ -38,13 +37,7 @@ public class ClockObjective : ObjectiveBase
             return true;
         }
         return false;
-        
-        
-            
-    
     }
-
-
 }
 
 [System.Serializable]

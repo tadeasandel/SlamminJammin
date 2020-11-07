@@ -8,9 +8,9 @@ public class ObjectiveClockHand : ObjectiveBase
 {
   InteractionClockHand interactionClockHand;
 
-  public override void EnableObjective(Action onObjectiveCompletedCallback)
+  public override void InitObjective(MainObjectiveBase mainObjectiveBase)
   {
-    base.EnableObjective(onObjectiveCompletedCallback);
+    base.InitObjective(mainObjectiveBase);
     interactionClockHand = GetComponent<InteractionClockHand>();
   }
 }
