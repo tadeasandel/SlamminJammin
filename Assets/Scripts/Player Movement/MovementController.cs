@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-  public float movementSpeed = 10.0f;
+    public bool isMovementPaused; //muj pridavek
+    public float movementSpeed = 10.0f;
 
   Rigidbody rigidBody;
 
@@ -16,7 +17,8 @@ public class MovementController : MonoBehaviour
 
   void Update()
   {
-    float xInput = Input.GetAxis("Vertical");
+        if (isMovementPaused) { return; }
+        float xInput = Input.GetAxis("Vertical");
     float zInput = Input.GetAxis("Horizontal");
 
     Vector3 xVelocity = transform.forward * movementSpeed * xInput;
