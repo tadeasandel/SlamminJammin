@@ -2659,7 +2659,7 @@ MonoBehaviour:
   - {fileID: 1089645127}
   - {fileID: 1823298711}
   - {fileID: 1214236776}
-  isZoomedIn: 0
+  transitionTime: 0.1
 --- !u!114 &6032371302808860244
 MonoBehaviour:
   m_ObjectHideFlags: 0
