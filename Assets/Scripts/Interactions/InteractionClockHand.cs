@@ -21,8 +21,9 @@ public class InteractionClockHand : InteractionBase
 
   public float transitionTime = 1;
 
-  void Awake()
+  public override void Awake()
   {
+    base.Awake();
     cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
     movementController = GameObject.Find("Player").GetComponent<MovementController>();
     rb = GameObject.Find("Player").GetComponent<Rigidbody>();

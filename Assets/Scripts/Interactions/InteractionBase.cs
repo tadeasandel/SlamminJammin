@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class InteractionBase : MonoBehaviour, IInteractableObject
 {
-  private void Awake()
+
+  public virtual void Awake()
   {
     gameObject.layer = 8;
   }
