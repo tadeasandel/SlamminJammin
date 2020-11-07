@@ -53,28 +53,63 @@ public class UIbuttonZoom : MonoBehaviour
 
     public void ok()
     {
-        if (checkHandOne.transform.rotation.z < -0.417f && checkHandOne.transform.rotation.z > -0.6f || checkHandOne.transform.rotation.z > 0.417f && checkHandOne.transform.rotation.z <0.6f )
+        Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.rotation.z);
+        Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.localRotation.z);
+
+        if (clock==0)
+        {
+            if (checkHandOne.transform.rotation.z < -0.417f && checkHandOne.transform.rotation.z > -0.6f || checkHandOne.transform.rotation.z > 0.417f && checkHandOne.transform.rotation.z < 0.6f)
+            {
+                if (checkHandTwo.transform.rotation.z > -0.095f && checkHandTwo.transform.rotation.z < -0.0722f || checkHandTwo.transform.rotation.z < 0.095f && checkHandTwo.transform.rotation.z > -0.0722)
+                {
+                    Debug.LogWarning("pozice ručičky" + checkHandOne.transform.rotation.z);
+                    for (int i = 0; i < btn.Count - 1; i++)
+                    {
+                        btn[i].SetActive(false);
+                    }
+                    isDone[clock] = true;
+                    dezoomScr.isDone = isDone[clock];
+                }
+
+
+            }
+
+
+        }
+        else
         {
             if (checkHandTwo.transform.rotation.z > -0.095f && checkHandTwo.transform.rotation.z < -0.0722f || checkHandTwo.transform.rotation.z < 0.095f && checkHandTwo.transform.rotation.z > -0.0722)
             {
-                Debug.LogWarning("pozice ručičky" + checkHandOne.transform.rotation.z);
-                for (int i = 0; i < btn.Count; i++)
-                {
-                    btn[i].SetActive(false);
+                if (checkHandOne.transform.rotation.z < -0.986f && checkHandOne.transform.rotation.z > -0.9999f)
+                {//-0,9976247 -0,9690911
+                    Debug.LogWarning("pozice ručičky" + checkHandOne.transform.rotation.z);
+                    for (int i = 0; i < btn.Count - 1; i++)
+                    {
+                        btn[i].SetActive(false);
+                    }
+                    isDone[clock] = true;
+                    dezoomScr.isDone = isDone[clock];
                 }
-                isDone[clock] = true;
-                dezoomScr.isDone = isDone[clock];
+
+
             }
-          
 
         }
-    
-    
-    
+
+
+
     }
     private void Update()
     {
-        //Debug.LogWarning("pozice ručičky" + checkHandTwo.transform.rotation.z);
+      //  Debug.LogWarning("pozice ručičkyVelke" + checkHandTwo.transform.rotation.z);
+      // Debug.LogWarning("pozice ručičkyMAle" + checkHandTwo.transform.rotation.z);
+    }
+    public void Zobraz() 
+    {
+        for (int i = 0; i < btn.Count - 1; i++)
+        {
+            btn[i].SetActive(true);
+        }
     }
 
 }
