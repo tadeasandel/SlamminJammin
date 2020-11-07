@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ClockInteraction : InteractionBase
 {
-  
-  public override bool isReady { get; set; }
-
     public override void Interact()
     {
     base.Interact();

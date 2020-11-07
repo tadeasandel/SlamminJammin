@@ -17,6 +17,7 @@ public class ClockObjective : ObjectiveBase
 
   public override void EnableObjective(Action onObjectiveCompletedCallback)
   {
+    Debug.LogError("clock objective enabled");
     base.EnableObjective(onObjectiveCompletedCallback);
     clockInteraction = GetComponent<ClockInteraction>();
   }
