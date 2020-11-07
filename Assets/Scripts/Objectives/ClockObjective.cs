@@ -20,6 +20,11 @@ public class ClockObjective : ObjectiveBase
     Debug.LogError("clock objective enabled");
     base.EnableObjective(onObjectiveCompletedCallback);
     clockInteraction = GetComponent<ClockInteraction>();
+    IInteractableObject[] interactions = GetComponentsInChildren<IInteractableObject>();
+    foreach (IInteractableObject interaction in interactions)
+    {
+      interaction.isReady = true;
+    }
   }
 
     public bool IsTimeCorect()
