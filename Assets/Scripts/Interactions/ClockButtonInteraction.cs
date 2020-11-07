@@ -13,7 +13,6 @@ public class ClockButtonInteraction : MonoBehaviour, IInteractableObject
 
   public void Interact()
   {
-    //int number = int.Parse(number_text.text);
     int number = int.Parse(sprite.sprite.name);
     if (positive)
     {
