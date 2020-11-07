@@ -14,12 +14,14 @@ public class InteractionClockHand : InteractionBase
   public float minimalRotation;
   public float maximalRotation;
 
+    public UIbuttonZoom uIbuttonZoom;
+
   GameObject Maincamera;
   public GameObject cameraTarget;
   public float timeCorountine;
   public List<Image> btn;
 
-  public float transitionTime = 1;
+    public float transitionTime;
 
     public Vector3 CameraSavePosition;
     public Quaternion CameraSaveRotation;
@@ -119,10 +121,12 @@ public class InteractionClockHand : InteractionBase
       currentTransform.rotation = Quaternion.Euler(Mathf.Lerp(currentTransform.rotation.x, endPosition.transform.rotation.x, timeDelay),
   Mathf.Lerp(currentTransform.rotation.y, endPosition.transform.rotation.y, timeDelay),
   Mathf.Lerp(currentTransform.rotation.z, endPosition.transform.rotation.z, timeDelay));
-      currentTime += Time.deltaTime;
+      currentTime += Time.deltaTime ;
       yield return null;
     }
-    Debug.LogError("cor finished");
+       uIbuttonZoom.clock=hodiny;
+        uIbuttonZoom.selectClock();
+        Debug.LogError("cor finished");
 
 
   }

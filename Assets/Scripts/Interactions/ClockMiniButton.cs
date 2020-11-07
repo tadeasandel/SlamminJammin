@@ -17,12 +17,13 @@ public class ClockMiniButton : MonoBehaviour
     {
         if (!ispressed)
             return;
-         Sipka.transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
+        SipkaVer[clock].transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
         Debug.Log("Pressed");
     }
     bool ispressed = false;
     public void OnPointerDown()
     {
+        clock = GetComponentInParent<UIbuttonZoom>().clock;
         ispressed = true;
     }
 
@@ -36,7 +37,7 @@ public class ClockMiniButton : MonoBehaviour
     public void Doleva()
     {
         Debug.LogWarning("Doleve");
-        Sipka.transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
+        SipkaVer[clock].transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
     }
 
     void selectClock()
