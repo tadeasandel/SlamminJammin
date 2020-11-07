@@ -54,6 +54,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6032371302054984146}
     m_Modifications:
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: clockOne
+      value: 
+      objectReference: {fileID: 6032371302203198104}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: clockTwo
+      value: 
+      objectReference: {fileID: 6032371302425962504}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: clockThree
+      value: 
+      objectReference: {fileID: 6032371303548076948}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: clockFour
+      value: 
+      objectReference: {fileID: 6032371302439522170}
     - target: {fileID: 5139214148026568508, guid: bd95c53c58977d3439b67d46cdaa4b47,
         type: 3}
       propertyPath: m_Name
@@ -134,3 +154,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c95233e4b101b4dbe39f582556beb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &6032371302203198104 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5139214146323778340, guid: bd95c53c58977d3439b67d46cdaa4b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505717078787588540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6032371302425962504 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5139214146168138164, guid: bd95c53c58977d3439b67d46cdaa4b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505717078787588540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6032371303548076948 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5139214147130606120, guid: bd95c53c58977d3439b67d46cdaa4b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505717078787588540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6032371302439522170 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5139214146158759622, guid: bd95c53c58977d3439b67d46cdaa4b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505717078787588540}
+  m_PrefabAsset: {fileID: 0}

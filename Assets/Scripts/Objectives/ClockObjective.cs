@@ -8,6 +8,11 @@ public class ClockObjective : ObjectiveBase
 {
   ClockInteraction clockInteraction;
 
+  public SpriteRenderer clockOne;
+  public SpriteRenderer clockTwo;
+  public SpriteRenderer clockThree;
+  public SpriteRenderer clockFour;
+
   public HourTime correctClockTime;
 
   public override void EnableObjective(Action onObjectiveCompletedCallback)

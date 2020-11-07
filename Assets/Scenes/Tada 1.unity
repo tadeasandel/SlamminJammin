@@ -1899,8 +1899,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
+        type: 3}
+      propertyPath: clockOne
+      value: 
+      objectReference: {fileID: 6032371302808860245}
+    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
+        type: 3}
+      propertyPath: clockTwo
+      value: 
+      objectReference: {fileID: 6032371302808860244}
+    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
+        type: 3}
+      propertyPath: clockThree
+      value: 
+      objectReference: {fileID: 6032371302808860243}
+    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
+        type: 3}
+      propertyPath: clockFour
+      value: 
+      objectReference: {fileID: 6032371302808860242}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 016f0c42120c2a5499e73936469f09bb, type: 3}
+--- !u!212 &6032371302808860242 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6032371302439522170, guid: 016f0c42120c2a5499e73936469f09bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6032371302808860241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6032371302808860243 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6032371303548076948, guid: 016f0c42120c2a5499e73936469f09bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6032371302808860241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6032371302808860244 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6032371302425962504, guid: 016f0c42120c2a5499e73936469f09bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6032371302808860241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6032371302808860245 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6032371302203198104, guid: 016f0c42120c2a5499e73936469f09bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6032371302808860241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7252722796129143211
 PrefabInstance:
   m_ObjectHideFlags: 0
