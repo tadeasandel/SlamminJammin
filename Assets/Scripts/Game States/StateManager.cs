@@ -22,12 +22,13 @@ public class StateManager : MonoBehaviour
     }
     gameStates[currentStateIndex].EndState(() =>
     {
-      gameStates[++currentStateIndex].StartState(TransitionToNextState);
+      currentStateIndex++;
+      gameStates[currentStateIndex].StartState(TransitionToNextState);
     });
   }
 
   public void FinishGame()
   {
-
+    Debug.LogError("game finished");
   }
 }

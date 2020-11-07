@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockInteraction : MonoBehaviour, IInteractableObject
+public class ClockInteraction : InteractionBase
 {
   
+  public override bool isReady { get; set; }
 
-    public void Interact()
+    public override void Interact()
     {
+    base.Interact();
         Debug.LogWarning("interakce");
         //sem se zpět vrati hračova hodnota
         
     }
 
-    public bool IsUsed()
+    public override bool IsUsed()
     {
         Debug.LogWarning("used");
         return false;

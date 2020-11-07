@@ -10,9 +10,18 @@ public class ObjectiveBase : MonoBehaviour
 
   public Action onObjectiveCompletedCallback;
 
+  public IInteractableObject connectedInteraction;
+
+  private void Awake()
+  {
+    connectedInteraction = GetComponent<IInteractableObject>();
+    connectedInteraction.isReady = false;
+  }
+
   public virtual void EnableObjective(Action onObjectiveCompletedCallback)
   {
     isObjectiveStarted = true;
+    connectedInteraction.isReady = true;
     this.onObjectiveCompletedCallback = onObjectiveCompletedCallback;
   }
 }

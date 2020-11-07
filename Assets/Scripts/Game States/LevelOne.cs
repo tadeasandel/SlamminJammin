@@ -9,4 +9,9 @@ public class LevelOne : StateBase
   {
     base.StartState(onStateFinishedCallback);
   }
+
+  public override void EndState(Action onStateEnded)
+  {
+    base.EndState(onStateEnded);
+  }
 }

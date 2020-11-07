@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchInteraction : MonoBehaviour, IInteractableObject
+public class SwitchInteraction : InteractionBase
 {
   public bool isActive;
 
-  public void Interact()
+  public override void Interact()
   {
+    base.Interact();
     isActive = !isActive;
   }
 
-  public bool IsUsed()
+  public override bool IsUsed()
   {
     return false;
   }

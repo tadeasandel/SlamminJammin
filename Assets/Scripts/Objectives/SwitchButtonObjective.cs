@@ -17,8 +17,10 @@ public class SwitchButtonObjective : ObjectiveBase
   private void Update()
   {
     if(!isObjectiveStarted) { return; }
+    if(isObjectiveDone) { return; }
     if (switchButton.isActive)
     {
+      isObjectiveDone = true;
       onObjectiveCompletedCallback();
     }
   }

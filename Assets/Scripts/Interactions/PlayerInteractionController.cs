@@ -22,7 +22,7 @@ public class PlayerInteractionController : MonoBehaviour
   void Update()
   {
     IInteractableObject currentInteraction = GetCurrentInteraction();
-    if (currentInteraction != null)
+    if (currentInteraction != null && currentInteraction.isReady)
     {
       if (canInteract)
       {

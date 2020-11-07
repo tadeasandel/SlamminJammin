@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ClockButtonInteraction : MonoBehaviour, IInteractableObject
+public class ClockButtonInteraction : InteractionBase
 {
   public SpriteRenderer sprite;
   public List<Sprite> changed_sprite;
 
   public bool positive;
 
-  public void Interact()
+  public override void Interact()
   {
+    base.Interact();
     int number = int.Parse(sprite.sprite.name);
     if (positive)
     {

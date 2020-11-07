@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class InteractionClockHand : MonoBehaviour, IInteractableObject
+public class InteractionClockHand : InteractionBase
 {
   public float RotationSpeed = 55;
   public bool isActive;
@@ -13,6 +13,7 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
     protected Rigidbody rb;
   public float minimalRotation;
   public float maximalRotation;
+
     GameObject Maincamera;
     GameObject cameraTarget;
     public float timeCorountine;
@@ -29,7 +30,18 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
         cameraTarget = GameObject.Find("CameraZoomPosition");
     }
   public void Interact()
+
+
+  public override bool isReady { get; set; }
+
+  void Awake()
   {
+    cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
+  }
+  public override void Interact()
+>>>>>>> Stashed changes
+  {
+    base.Interact();
     isActive = !isActive;
         StartCoroutine(Switch());
      
@@ -65,8 +77,12 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
 
     }
 
+<<<<<<< Updated upstream
 
     public bool IsUsed()
+=======
+  public override bool IsUsed()
+>>>>>>> Stashed changes
   {
     return false;
 
