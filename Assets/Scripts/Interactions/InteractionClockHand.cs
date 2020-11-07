@@ -22,24 +22,16 @@ public class InteractionClockHand : InteractionBase
 
   void Awake()
   {
-      
         cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
       movementController = GameObject.Find("Player").GetComponent<MovementController>();
         rb = GameObject.Find("Player").GetComponent<Rigidbody>();
         Maincamera = GameObject.Find("Main Camera");
         cameraTarget = GameObject.Find("CameraZoomPosition");
     }
-  public void Interact()
-
 
   public override bool isReady { get; set; }
 
-  void Awake()
-  {
-    cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
-  }
   public override void Interact()
->>>>>>> Stashed changes
   {
     base.Interact();
     isActive = !isActive;
@@ -77,15 +69,10 @@ public class InteractionClockHand : InteractionBase
 
     }
 
-<<<<<<< Updated upstream
 
-    public bool IsUsed()
-=======
   public override bool IsUsed()
->>>>>>> Stashed changes
   {
     return false;
-
   }
   
     IEnumerator CameraZoom(GameObject startPosition, GameObject endPosition, float time)
