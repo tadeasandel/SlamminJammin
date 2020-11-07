@@ -126,6 +126,7 @@ public class InteractionClockHand : InteractionBase
     }
        uIbuttonZoom.clock=hodiny;
         uIbuttonZoom.selectClock();
+        uIbuttonZoom.Zobraz();
         Debug.LogError("cor finished");
 
 
