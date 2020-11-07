@@ -21,7 +21,11 @@ public class InteractionClockHand : InteractionBase
 
   public float transitionTime = 1;
 
-  public override void Awake()
+    public Vector3 CameraSavePosition;
+    public Quaternion CameraSaveRotation;
+
+
+    public override void Awake()
   {
     base.Awake();
     cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
@@ -67,6 +71,26 @@ public class InteractionClockHand : InteractionBase
     }
 
 
+
+    IEnumerator FadeOut(float startValue, float endValue)
+    {
+        float currentValue = startValue;
+
+        while (currentValue >= endValue)
+        {
+            currentValue -= Time.deltaTime;
+
+            for (int i = 0; i < btn.Count; i++)
+            {
+                btn[i].color = new Color(btn[i].color.r, btn[i].color.g, btn[i].color.b, currentValue);
+
+            }
+            yield return null;
+        }
+
+    }
+
+
     public override bool IsUsed()
   {
     return false;
@@ -82,7 +106,9 @@ public class InteractionClockHand : InteractionBase
 
 
     Transform currentTransform = startPosition.transform;
-    float currentTime = 0;
+        CameraSavePosition = startPosition.transform.position;
+        CameraSaveRotation = startPosition.transform.rotation;
+        float currentTime = 0;
     while (coroutineDelay >= currentTime)
     {
       currentTransform.position = new Vector3(Mathf.Lerp(currentTransform.position.x, endPosition.transform.position.x, timeDelay),
@@ -98,22 +124,45 @@ public class InteractionClockHand : InteractionBase
 
 
   }
-
-  void Update()
-  {
-    if (isActive)
+    public void Dezoom()
     {
-      //  transform.Rotate(0, 0, (Input.GetAxis("Mouse Y") * RotationSpeed * Time.deltaTime), Space.World);
+        for (int i = 0; i < btn.Count; i++)
+        {
+            btn[i].color = new Color(btn[i].color.r, btn[i].color.g, btn[i].color.b, 0);
+
+        }
+        StartCoroutine(CameraDeZoom(Maincamera, CameraSavePosition,CameraSaveRotation, timeCorountine, transitionTime));
     }
 
-    /*/if (isActive && Input.GetMouseButtonUp(0))
+    IEnumerator CameraDeZoom(GameObject startPosition, Vector3 endPosition, Quaternion rotation, float timeDelay, float coroutineDelay)
     {
-      isActive = false;
-      cameraRotation.isRotationPaused = isActive;
+        Transform currentTransform = startPosition.transform;
+        float currentTime = 0;
+        while (coroutineDelay >= currentTime)
+        {
+            currentTransform.position = new Vector3(Mathf.Lerp(currentTransform.position.x, endPosition.x, timeDelay),
+              Mathf.Lerp(currentTransform.position.y, endPosition.y, timeDelay),
+              Mathf.Lerp(currentTransform.position.z, endPosition.z, timeDelay));
+            currentTransform.rotation = Quaternion.Euler(Mathf.Lerp(currentTransform.rotation.x, rotation.x, timeDelay),
+        Mathf.Lerp(currentTransform.rotation.y, rotation.y, timeDelay),
+        Mathf.Lerp(currentTransform.rotation.z, rotation.z, timeDelay));
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+
+        currentTransform.transform.position = CameraSavePosition;
+        Debug.LogError("pZapnutíOdzoomui");
+        cameraRotation.isRotationPaused = false;
+        movementController.isMovementPaused = false;
+
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
+
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        yield return null;
+
     }
-    if (transform.localRotation.z < minimalRotation && transform.localRotation.z > maximalRotation)
-    {
-      Debug.Log("jop");
-    }*/
-  }
+
+
+
+
 }

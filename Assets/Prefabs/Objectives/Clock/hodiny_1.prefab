@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1306953601132057804}
   - component: {fileID: 1306953601132057805}
   m_Layer: 0
-  m_Name: hodiny_raficka_dlouha
+  m_Name: hodiny_raficka_dlouha_pod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,10 +25,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306953601132057802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6350098, y: 3.8250008, z: 0}
+  m_LocalPosition: {x: 1.6080017, y: 0.89100266, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1306953602503272380}
+  m_Father: {fileID: 5724327142891260120}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1306953601132057805
@@ -90,8 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306953601216718583}
-  - component: {fileID: 1306953601216718580}
-  - component: {fileID: 1306953601216718582}
   m_Layer: 0
   m_Name: hodiny_raficka_kratka
   m_TagString: Untagged
@@ -114,40 +112,6 @@ Transform:
   m_Father: {fileID: 1306953602503272380}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1306953601216718580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306953601216718581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59bf196f9143314c8bf3696b3508562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotationSpeed: 55
-  isActive: 0
-  cameraRotation: {fileID: 0}
-  movementController: {fileID: 0}
-  minimalRotation: -0.42
-  maximalRotation: -0.55
-  timeCorountine: 0
-  btn: []
-  isZoomedIn: 0
---- !u!65 &1306953601216718582
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306953601216718581}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3737297, y: 1.4640541, z: 1}
-  m_Center: {x: -0.013940811, y: 0.23202705, z: 0}
 --- !u!1 &1306953601596803513
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,11 +217,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306953602503272379}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33.01516, y: 1.9982681, z: 12.880348}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1306953601132057804}
+  - {fileID: 5724327142891260120}
   - {fileID: 1306953601216718583}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -312,3 +276,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4871131520006751277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5724327142891260120}
+  - component: {fileID: 2620164893816114652}
+  - component: {fileID: 8956198678977537958}
+  m_Layer: 0
+  m_Name: hodiny_raficka_dlouha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5724327142891260120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871131520006751277}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.027008, y: 2.933998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1306953601132057804}
+  m_Father: {fileID: 1306953602503272380}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2620164893816114652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871131520006751277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59bf196f9143314c8bf3696b3508562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: 55
+  isActive: 0
+  cameraRotation: {fileID: 0}
+  movementController: {fileID: 0}
+  minimalRotation: -0.42
+  maximalRotation: -0.55
+  timeCorountine: 0
+  btn: []
+  transitionTime: 1
+--- !u!65 &8956198678977537958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871131520006751277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3737297, y: 1.4640541, z: 1}
+  m_Center: {x: -0.013940811, y: 0.23202705, z: 0}
