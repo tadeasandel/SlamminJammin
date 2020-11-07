@@ -1321,10 +1321,10 @@ MonoBehaviour:
   clockThree: {fileID: 0}
   clockFour: {fileID: 0}
   correctClockTime:
-    firstDigit: 0
-    secondDigit: 0
-    thirdDigit: 0
-    fourthDigit: 0
+    firstDigit: 1
+    secondDigit: 9
+    thirdDigit: 4
+    fourthDigit: 7
 --- !u!1 &2375685045980652699
 GameObject:
   m_ObjectHideFlags: 0

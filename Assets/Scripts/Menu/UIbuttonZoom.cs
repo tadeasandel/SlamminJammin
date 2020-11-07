@@ -23,7 +23,7 @@ public class UIbuttonZoom : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 1; i++)
         {
             isDone[i] = false;
         }
@@ -31,7 +31,7 @@ public class UIbuttonZoom : MonoBehaviour
 
     }
 
-    void selectClock()
+    public void selectClock()
     {
         dezoomScr = dezoomScrVar[clock];
         checkHandOne= checkHandOneVar[clock];
@@ -74,7 +74,7 @@ public class UIbuttonZoom : MonoBehaviour
     }
     private void Update()
     {
-        Debug.LogWarning("pozice ručičky" + checkHandTwo.transform.rotation.z);
+        //Debug.LogWarning("pozice ručičky" + checkHandTwo.transform.rotation.z);
     }
 
 }

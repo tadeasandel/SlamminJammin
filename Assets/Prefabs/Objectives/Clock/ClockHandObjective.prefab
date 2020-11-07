@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1933732799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1933732800}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1933732800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933732799}
+  m_LocalRotation: {x: 0.019497061, y: -0.0014995846, z: 0.000029245606, w: 0.9998088}
+  m_LocalPosition: {x: 1.8831477, y: 3.73246, z: -8.8220005}
+  m_LocalScale: {x: 0.5335895, y: 0.5335895, z: 0.5335895}
+  m_Children: []
+  m_Father: {fileID: 6667906134782242628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7741506071320519834
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 7741506071320519834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8741, y: 1.8741, z: 1.8741}
+  m_LocalScale: {x: 1.5173, y: 1.5173, z: 1.5173}
   m_Children:
   - {fileID: 6667906134782242628}
   m_Father: {fileID: 0}
@@ -65,14 +95,18 @@ MonoBehaviour:
   movementController: {fileID: 0}
   minimalRotation: -0.42
   maximalRotation: -0.55
-  cameraTarget: {fileID: 0}
-  timeCorountine: 0
-  btn: []
-  transitionTime: 1
+  cameraTarget: {fileID: 1933732799}
+  timeCorountine: 0.05
+  btn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  transitionTime: 0.091
   CameraSavePosition: {x: 0, y: 0, z: 0}
   CameraSaveRotation: {x: 0, y: 0, z: 0, w: 0}
   isDone: 0
-  hodiny: 0
+  hodiny: 2
 --- !u!114 &7481692456667481569
 MonoBehaviour:
   m_ObjectHideFlags: 0
