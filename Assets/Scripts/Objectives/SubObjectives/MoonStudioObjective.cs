@@ -6,6 +6,10 @@ public class MoonStudioObjective : ObjectiveBase
 {
   public List<StudioClickInteraction> StudioClicks;
 
+  public Material materialOnFinished;
+
+  public MeshRenderer meshToChange;
+
   public void onInteraction()
   {
     foreach (StudioClickInteraction click in StudioClicks)
@@ -20,5 +24,11 @@ public class MoonStudioObjective : ObjectiveBase
       switchInteraction.isDisabled = true;
     }
     FinishObjective();
+  }
+
+  public override void FinishObjective()
+  {
+    meshToChange.material = materialOnFinished;
+    base.FinishObjective();
   }
 }
