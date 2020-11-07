@@ -74,6 +74,26 @@ PrefabInstance:
       propertyPath: clockFour
       value: 
       objectReference: {fileID: 6032371302439522170}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: correctClockTime.firstDigit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: correctClockTime.secondDigit
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: correctClockTime.thirdDigit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
+        type: 3}
+      propertyPath: correctClockTime.fourthDigit
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5139214148026568508, guid: bd95c53c58977d3439b67d46cdaa4b47,
         type: 3}
       propertyPath: m_Name

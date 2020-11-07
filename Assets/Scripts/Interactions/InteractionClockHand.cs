@@ -16,22 +16,35 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
   public void Interact()
   {
     isActive = !isActive;
-    cameraRotation.isRotationPaused = isActive;
-  }
+        StartCoroutine(CameraZoom());
+     
+    }
 
   public bool IsUsed()
   {
     return false;
 
   }
+    IEnumerator CameraZoom()
+    {
+        // Debug.LogError("probehlo_spusteni");
+        cameraRotation.isRotationPaused = isActive;
 
-  void Update()
+        yield return null;
+        
+
+
+
+    }
+
+    void Update()
   {
     if (isActive)
     {
-      transform.Rotate(0, 0, (Input.GetAxis("Mouse Y") * RotationSpeed * Time.deltaTime), Space.World);
+    //  transform.Rotate(0, 0, (Input.GetAxis("Mouse Y") * RotationSpeed * Time.deltaTime), Space.World);
     }
-    if (isActive && Input.GetMouseButtonUp(0))
+
+    /*/if (isActive && Input.GetMouseButtonUp(0))
     {
       isActive = false;
       cameraRotation.isRotationPaused = isActive;
@@ -39,6 +52,6 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
     if (transform.localRotation.z < minimalRotation && transform.localRotation.z > maximalRotation)
     {
       Debug.Log("jop");
-    }
+    }*/
   }
 }

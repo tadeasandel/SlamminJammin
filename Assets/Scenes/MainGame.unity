@@ -534,6 +534,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734896213}
   m_CullTransparentMesh: 0
+--- !u!1 &1184185200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1184185201}
+  m_Layer: 0
+  m_Name: CameraZoomPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1184185201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184185200}
+  m_LocalRotation: {x: -0.0003089649, y: 0.0050880206, z: -0.0000017112193, w: -0.999987}
+  m_LocalPosition: {x: 1.5985107, y: 2.672268, z: -5.615608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2018762097}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1263812408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1069,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833479084}
   m_CullTransparentMesh: 0
+--- !u!4 &2018762097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6032371303978215420, guid: 016f0c42120c2a5499e73936469f09bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6032371302808860241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2102241087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,52 +1935,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
-        type: 3}
-      propertyPath: clockOne
-      value: 
-      objectReference: {fileID: 6032371302808860245}
-    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
-        type: 3}
-      propertyPath: clockTwo
-      value: 
-      objectReference: {fileID: 6032371302808860244}
-    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
-        type: 3}
-      propertyPath: clockThree
-      value: 
-      objectReference: {fileID: 6032371302808860243}
-    - target: {fileID: 6032371302753253669, guid: 016f0c42120c2a5499e73936469f09bb,
-        type: 3}
-      propertyPath: clockFour
-      value: 
-      objectReference: {fileID: 6032371302808860242}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 016f0c42120c2a5499e73936469f09bb, type: 3}
---- !u!212 &6032371302808860242 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6032371302439522170, guid: 016f0c42120c2a5499e73936469f09bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6032371302808860241}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6032371302808860243 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6032371303548076948, guid: 016f0c42120c2a5499e73936469f09bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6032371302808860241}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6032371302808860244 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6032371302425962504, guid: 016f0c42120c2a5499e73936469f09bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6032371302808860241}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6032371302808860245 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6032371302203198104, guid: 016f0c42120c2a5499e73936469f09bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6032371302808860241}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7252722796129143211
 PrefabInstance:
   m_ObjectHideFlags: 0

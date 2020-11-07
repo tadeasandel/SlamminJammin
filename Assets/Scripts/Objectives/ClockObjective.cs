@@ -20,6 +20,25 @@ public class ClockObjective : ObjectiveBase
     base.EnableObjective(onObjectiveCompletedCallback);
     clockInteraction = GetComponent<ClockInteraction>();
   }
+
+    public bool IsTimeCorect()
+    {
+        if (correctClockTime.firstDigit == int.Parse(clockOne.sprite.name) &&
+            correctClockTime.secondDigit == int.Parse(clockTwo.sprite.name) &&
+            correctClockTime.thirdDigit == int.Parse(clockThree.sprite.name) &&
+            correctClockTime.fourthDigit == int.Parse(clockFour.sprite.name))
+        {
+            Debug.LogWarning("spravna hodnota hodin");
+            return true;
+        }
+        return false;
+        
+        
+            
+    
+    }
+
+
 }
 
 [System.Serializable]
@@ -38,3 +57,4 @@ public struct HourTime
     this.fourthDigit = fourthDigit;
   }
 }
+
