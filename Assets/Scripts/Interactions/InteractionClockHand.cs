@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+
 
 public class InteractionClockHand : MonoBehaviour, IInteractableObject
 {
@@ -15,6 +16,8 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
     GameObject Maincamera;
     GameObject cameraTarget;
     public float timeCorountine;
+    public List<Image> btn;
+
 
   void Awake()
   {
@@ -28,11 +31,42 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
   public void Interact()
   {
     isActive = !isActive;
-        StartCoroutine(CameraZoom(Maincamera, cameraTarget, timeCorountine));
+        StartCoroutine(Switch());
      
     }
+    IEnumerator Switch()
+    {
+        yield return StartCoroutine(CameraZoom(Maincamera, cameraTarget, timeCorountine));
+        StartCoroutine(FadeOut(1,0));
 
-  public bool IsUsed()
+
+    }
+    IEnumerator FadeOut(float startValue, float endValue)
+    {
+        Debug.LogError("probehlo_spusteni Fa");
+
+        float currentValue = startValue;
+        Debug.LogError(currentValue);
+        while (currentValue >= endValue)
+        {
+            currentValue -= Time.deltaTime;
+
+            
+
+            for (int i = 0; i < 4; i++)
+            {
+                btn[i].color = new Color(btn[i].color.r, btn[i].color.g, btn[i].color.b, currentValue);
+
+            }
+            yield return null;
+        }
+
+
+
+    }
+
+
+    public bool IsUsed()
   {
     return false;
 
@@ -58,7 +92,8 @@ public class InteractionClockHand : MonoBehaviour, IInteractableObject
         Mathf.Lerp(currentTransform.rotation.z, endPosition.transform.rotation.z, time));
             yield return null;
         }
-        
+    
+
     }
 
     void Update()

@@ -87,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 5139214146701715208, guid: bd95c53c58977d3439b67d46cdaa4b47,
         type: 3}
       propertyPath: timeCorountine
-      value: 1
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 5139214146864265369, guid: bd95c53c58977d3439b67d46cdaa4b47,
         type: 3}
