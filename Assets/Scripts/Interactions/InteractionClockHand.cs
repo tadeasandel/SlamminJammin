@@ -41,37 +41,32 @@ public class InteractionClockHand : InteractionBase
   }
   IEnumerator Switch()
   {
+        transitionTime = transitionTime * Vector3.Distance(cameraTarget.transform.position, Maincamera.transform.position);
     yield return StartCoroutine(CameraZoom(Maincamera, cameraTarget, timeCorountine, transitionTime));
-    StartCoroutine(FadeOut(1, 0));
+    StartCoroutine(FadeIn(0, 1));
 
 
   }
-  IEnumerator FadeOut(float startValue, float endValue)
-  {
-    Debug.LogError("probehlo_spusteni Fa");
-
-    float currentValue = startValue;
-    Debug.LogError(currentValue);
-    while (currentValue >= endValue)
+    IEnumerator FadeIn(float startValue, float endValue)
     {
-      currentValue -= Time.deltaTime;
+        float currentValue = startValue;
 
+        while (currentValue <= endValue)
+        {
+            currentValue += Time.deltaTime;
 
+            for (int i = 0; i < btn.Count; i++)
+            {
+                btn[i].color = new Color(btn[i].color.r, btn[i].color.g, btn[i].color.b, currentValue);
 
-      for (int i = 0; i < 4; i++)
-      {
-        btn[i].color = new Color(btn[i].color.r, btn[i].color.g, btn[i].color.b, currentValue);
-
-      }
-      yield return null;
+            }
+            yield return null;
+        }
+       
     }
 
 
-
-  }
-
-
-  public override bool IsUsed()
+    public override bool IsUsed()
   {
     return false;
   }
