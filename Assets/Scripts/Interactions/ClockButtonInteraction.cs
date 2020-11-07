@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SwitchClockButton : MonoBehaviour, IInteractableObject
+public class ClockButtonInteraction : MonoBehaviour, IInteractableObject
 {
   public SpriteRenderer sprite;
   public List<Sprite> changed_sprite;

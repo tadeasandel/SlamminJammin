@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 55
   isActive: 0
-  rotace: {fileID: 1975568958}
+  cameraRotation: {fileID: 0}
   minimalRotation: -0.42
   maximalRotation: -0.55
 --- !u!4 &178278630
@@ -3210,18 +3210,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1975568958 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7252722796296936228, guid: e4afd8f1618ea2b4a85ae3836424a1da,
-    type: 3}
-  m_PrefabInstance: {fileID: 7252722796129143211}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f074880798dea1748a1b70f5e015bca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2060023306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,5 +4370,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 974115467, guid: e4afd8f1618ea2b4a85ae3836424a1da, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4afd8f1618ea2b4a85ae3836424a1da, type: 3}

@@ -9,7 +9,6 @@ public class SwitchInteraction : MonoBehaviour, IInteractableObject
   public void Interact()
   {
     isActive = !isActive;
-    throw new System.NotImplementedException();
   }
 
   public bool IsUsed()
