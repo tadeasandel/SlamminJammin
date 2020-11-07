@@ -16,6 +16,10 @@ public class MenuManager : MonoBehaviour
     int clickNumber;
 
     public List<Image> button;
+
+  public AudioSource mainSoundAudio;
+
+  public AudioClip[] hahaSounds;
    
     protected bool firstStart;
  
@@ -33,7 +37,7 @@ public class MenuManager : MonoBehaviour
    public void Button_start()
     {
         button[0].color = Color.Lerp(Color.white, Color.clear, 1);
-        
+        mainSoundAudio.PlayOneShot(hahaSounds[Random.Range(0,hahaSounds.Length-1)]);
     }
     public void Button_Option_click()
     {
