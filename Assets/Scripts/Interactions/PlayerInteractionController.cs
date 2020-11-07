@@ -14,6 +14,10 @@ public class PlayerInteractionController : MonoBehaviour
 
   public bool canInteract = true;
 
+  public LayerMask raycastLayer;
+
+  public float longHandDisplayTime;
+
   private void Start()
   {
     HandOnInteracted.gameObject.SetActive(false);
@@ -37,15 +41,16 @@ public class PlayerInteractionController : MonoBehaviour
     }
     else
     {
-        HandInteractable.gameObject.SetActive(false);
+      HandInteractable.gameObject.SetActive(false);
     }
   }
 
   private IEnumerator ShowInteractHandThenHide()
   {
     canInteract = false;
+    HandInteractable.gameObject.SetActive(false);
     HandOnInteracted.gameObject.SetActive(true);
-    yield return new WaitForSecondsRealtime(0.1f);
+    yield return new WaitForSecondsRealtime(longHandDisplayTime);
     HandOnInteracted.gameObject.SetActive(false);
     canInteract = true;
   }
@@ -53,7 +58,7 @@ public class PlayerInteractionController : MonoBehaviour
   private IInteractableObject GetCurrentInteraction()
   {
     RaycastHit hit;
-    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, reachDistance))
+    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, reachDistance, raycastLayer))
     {
       IInteractableObject rayCastableObject = hit.transform.GetComponent<IInteractableObject>();
       if (rayCastableObject != null)

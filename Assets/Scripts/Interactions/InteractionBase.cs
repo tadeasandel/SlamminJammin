@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class InteractionBase : MonoBehaviour, IInteractableObject
 {
+  private void Awake()
+  {
+    gameObject.layer = 8;
+  }
+
   public virtual bool isReady { get; set; }
 
   public virtual void Interact()
