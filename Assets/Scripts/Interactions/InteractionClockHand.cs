@@ -24,6 +24,7 @@ public class InteractionClockHand : InteractionBase
     public Vector3 CameraSavePosition;
     public Quaternion CameraSaveRotation;
 
+    
 
     public override void Awake()
   {
@@ -39,7 +40,7 @@ public class InteractionClockHand : InteractionBase
   {
     if(isActive) { return; }
     base.Interact();
-    isActive = !isActive;
+    isActive = true;
     isReady = false;
     StartCoroutine(Switch());
 
@@ -124,6 +125,7 @@ public class InteractionClockHand : InteractionBase
 
 
   }
+
     public void Dezoom()
     {
         for (int i = 0; i < btn.Count; i++)
@@ -150,6 +152,9 @@ public class InteractionClockHand : InteractionBase
             yield return null;
         }
 
+        isActive = false;
+        isReady = true ;
+
         currentTransform.transform.position = CameraSavePosition;
         Debug.LogError("pZapnutíOdzoomui");
         cameraRotation.isRotationPaused = false;
@@ -162,6 +167,7 @@ public class InteractionClockHand : InteractionBase
 
     }
 
+    
 
 
 
