@@ -17,8 +17,8 @@ public class MovementController : MonoBehaviour
 
   void Update()
   {
-        if (isMovementPaused) { return; }
-        float xInput = Input.GetAxis("Vertical");
+    if (isMovementPaused) { return; }
+    float xInput = Input.GetAxis("Vertical");
     float zInput = Input.GetAxis("Horizontal");
 
     Vector3 xVelocity = transform.forward * movementSpeed * xInput;
