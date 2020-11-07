@@ -6,19 +6,34 @@ public class UIbuttonZoom : MonoBehaviour
 {
     public List<GameObject> btn;
     public InteractionClockHand dezoomScr;
+    public InteractionClockHand dezoomScr2;
     public GameObject checkHandOne;
     public GameObject checkHandTwo;
-
+    public List<bool> isDone;
+    public int arw;
+    
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        dezoomScr = GameObject.Find("ClockHandObjective").GetComponent<InteractionClockHand>(); ;
+        isDone[arw] = false;
+
+    }
+    void ARW()
+    {
+        
+       
 
     }
 
     // Update is called once per frame
     public void Dezoom()
     {
+        if (!isDone[arw])
+        {
+            checkHandOne.transform.rotation = new Quaternion(checkHandOne.transform.rotation.x, checkHandOne.transform.rotation.y,0, checkHandOne.transform.rotation.w) ;
+            checkHandTwo.transform.rotation = new Quaternion(checkHandTwo.transform.rotation.x, checkHandTwo.transform.rotation.y, 0, checkHandTwo.transform.rotation.w);
+
+        }
         dezoomScr.Dezoom();
     }
 
@@ -33,7 +48,8 @@ public class UIbuttonZoom : MonoBehaviour
                 {
                     btn[i].SetActive(false);
                 }
-
+                isDone[arw] = true;
+                dezoomScr.isDone = isDone[arw];
             }
           
 

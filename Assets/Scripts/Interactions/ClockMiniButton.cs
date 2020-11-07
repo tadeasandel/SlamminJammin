@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ClockMiniButton : MonoBehaviour
 {
+    public GameObject SipkaVer1;
+    public GameObject SipkaVer2;
+
     public GameObject Sipka;
     public float RotationSpeed;
     public float Distance;
@@ -33,5 +36,10 @@ public class ClockMiniButton : MonoBehaviour
     {
         Debug.LogWarning("Doleve");
         Sipka.transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
+    }
+
+    public void FindArrow()
+    { 
+
     }
 }

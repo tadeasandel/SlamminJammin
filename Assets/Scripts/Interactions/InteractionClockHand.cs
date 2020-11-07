@@ -15,7 +15,7 @@ public class InteractionClockHand : InteractionBase
   public float maximalRotation;
 
   GameObject Maincamera;
-  GameObject cameraTarget;
+  public GameObject cameraTarget;
   public float timeCorountine;
   public List<Image> btn;
 
@@ -23,8 +23,8 @@ public class InteractionClockHand : InteractionBase
 
     public Vector3 CameraSavePosition;
     public Quaternion CameraSaveRotation;
-
-    
+    public bool isDone;
+    public int hodiny;
 
     public override void Awake()
   {
@@ -33,8 +33,9 @@ public class InteractionClockHand : InteractionBase
     movementController = GameObject.Find("Player").GetComponent<MovementController>();
     rb = GameObject.Find("Player").GetComponent<Rigidbody>();
     Maincamera = GameObject.Find("Main Camera");
-    cameraTarget = GameObject.Find("CameraZoomPosition");
-  }
+    //cameraTarget = GameObject.Find("CameraZoomPosition");
+      
+    }
 
   public override void Interact()
   {
@@ -167,8 +168,8 @@ public class InteractionClockHand : InteractionBase
 
     }
 
-    
 
+ 
 
 
 }

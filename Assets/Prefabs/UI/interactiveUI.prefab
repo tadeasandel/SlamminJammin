@@ -142,7 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314b48abac7921b4e8953a4457c23408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: []
   dezoomScr: {fileID: 0}
+  checkHandOne: {fileID: 0}
+  checkHandTwo: {fileID: 0}
+  isDone: 0
 --- !u!1 &667817434563291389
 GameObject:
   m_ObjectHideFlags: 0
