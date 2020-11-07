@@ -2084,7 +2084,8 @@ PrefabInstance:
       propertyPath: btn.Array.data[5]
       value: 
       objectReference: {fileID: 779829577}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814098827893857814, guid: 016f0c42120c2a5499e73936469f09bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 016f0c42120c2a5499e73936469f09bb, type: 3}
 --- !u!1001 &7252722796129143211
 PrefabInstance:
