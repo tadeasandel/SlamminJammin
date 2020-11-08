@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public List<Button> butons;
     public TextMeshProUGUI text_Newgame;
     public TextMeshProUGUI text_pressButton;
     public GameObject warning_text;
@@ -22,15 +23,15 @@ public class MenuManager : MonoBehaviour
   public AudioClip[] hahaSounds;
    
     protected bool firstStart;
- 
+    protected bool runFade;
     void Start()
     {
         firstStart = true;
-
+       
         for (int i = 0; i < 3; i++)
         {
             button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, 0);
-            
+            butons[i].enabled = false;
         }
     }
 
@@ -41,11 +42,19 @@ public class MenuManager : MonoBehaviour
     }
     public void Button_Option_click()
     {
-        SceneManager.LoadScene("MainGame");
+        if (firstStart == false)
+        {
+                SceneManager.LoadScene("MainGame");
+        }
+       
     }
     public void Button_Option_pointer()
     {
-        warning_text.SetActive(true);
+        if (firstStart==false)
+        {
+            warning_text.SetActive(true);
+        }
+        
     }
     public void Button_Option_pointer_exit()
     {
@@ -66,10 +75,11 @@ public class MenuManager : MonoBehaviour
 
     void Update()
   {
-    if (Input.anyKeyDown)
+    if (Input.anyKeyDown && runFade==false)
     {
       if (Input.anyKeyDown && firstStart)
       {
+                runFade = true;
         StartCoroutine(Fade());
       }
     }
@@ -106,10 +116,15 @@ public class MenuManager : MonoBehaviour
         }
        
        
-        
+
+
     }
     IEnumerator FadeIn(float startValue, float endValue)
     {
+        for (int i = 0; i < butons.Count; i++)
+        {
+            butons[i].enabled = enabled;
+        }
         float currentValue = startValue;
 
         while (currentValue <= endValue)
