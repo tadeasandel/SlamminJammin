@@ -688,6 +688,7 @@ MonoBehaviour:
   mainSoundAudio: {fileID: 1264803532}
   hahaSounds:
   - {fileID: 8300000, guid: 0d6aa207c58bc0c47b0562ea3597e004, type: 3}
+  click: {fileID: 8300000, guid: b1ef74e4edeb2cb4d9e538a570e929e5, type: 3}
 --- !u!82 &1264803531
 AudioSource:
   m_ObjectHideFlags: 0

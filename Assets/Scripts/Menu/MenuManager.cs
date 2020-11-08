@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour
   public AudioSource mainSoundAudio;
 
   public AudioClip[] hahaSounds;
-   
+    public AudioClip click; 
     protected bool firstStart;
     protected bool runFade;
     void Start()
@@ -34,6 +34,11 @@ public class MenuManager : MonoBehaviour
             butons[i].enabled = false;
         }
     }
+    void PlayClick()
+    {
+        mainSoundAudio.PlayOneShot(click);
+
+    }
 
    public void Button_start()
     {
@@ -42,9 +47,13 @@ public class MenuManager : MonoBehaviour
     }
     public void Button_Option_click()
     {
-        if (firstStart == false)
+        
+        if (firstStart == false )
         {
-                SceneManager.LoadScene("MainGame");
+
+
+            StartCoroutine(LoadsceneCorountine());
+         
         }
        
     }
@@ -52,6 +61,7 @@ public class MenuManager : MonoBehaviour
     {
         if (firstStart==false)
         {
+           
             warning_text.SetActive(true);
         }
         
@@ -63,7 +73,7 @@ public class MenuManager : MonoBehaviour
     }
     public void Button_Quit()
     {
-       
+        PlayClick();
         generator();
         button[2].transform.localPosition = Vector3.Lerp(button[2].transform.localPosition, new Vector3(posX, posY,0),1);
         clickNumber++;
@@ -75,14 +85,15 @@ public class MenuManager : MonoBehaviour
 
     void Update()
   {
-    if (Input.anyKeyDown && runFade==false)
-    {
-      if (Input.anyKeyDown && firstStart)
-      {
-                runFade = true;
-        StartCoroutine(Fade());
-      }
-    }
+        
+        if (Input.anyKeyDown && runFade==false)
+        {
+          if (Input.anyKeyDown && firstStart)
+          {
+                    runFade = true;
+            StartCoroutine(Fade());
+          }
+         }
   }
     void generator()
     {
@@ -90,7 +101,17 @@ public class MenuManager : MonoBehaviour
         posY = Random.Range(-301, 362);
         Debug.Log("posX" + posX + "posY" + posY);
     }
-        
+
+    IEnumerator LoadsceneCorountine()
+    {
+        PlayClick();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("MainGame");
+        // yield return null;
+
+
+
+    }
     IEnumerator Fade()
     {
         yield return StartCoroutine(FadeOut(1, 0));
