@@ -11,7 +11,16 @@ public class ClockMiniButton : MonoBehaviour
 
     public float RotationSpeed;
     public float Distance;
+    public UIbuttonZoom parent;
 
+
+    private void Start()
+    {
+        parent = GetComponentInParent<UIbuttonZoom>();
+       
+
+
+    }
 
     void Update()
     {
@@ -23,13 +32,14 @@ public class ClockMiniButton : MonoBehaviour
     bool ispressed = false;
     public void OnPointerDown()
     {
-        
+        parent.mainSoundAudio.Play();
         ispressed = true;
     }
 
     public void OnPointerUp()
     {
         ispressed = false;
+        parent.mainSoundAudio.Stop();
     }
 
 

@@ -15,7 +15,10 @@ public class ClockObjective : ObjectiveBase
 
   public HourTime correctClockTime;
 
-  public override void InitObjective(MainObjectiveBase mainObjectiveBase)
+    public AudioSource mainSoundAudio;
+    public AudioClip click;
+
+    public override void InitObjective(MainObjectiveBase mainObjectiveBase)
   {
     base.InitObjective(mainObjectiveBase);
     clockInteraction = GetComponent<ClockInteraction>();

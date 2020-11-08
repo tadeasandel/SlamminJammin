@@ -14,12 +14,12 @@ public class UIbuttonZoom : MonoBehaviour
     public GameObject checkHandTwo;
     public bool isDone;
     public int kolo;
-   
-    
+
+    public AudioSource mainSoundAudio;
+    public AudioClip click;
 
 
 
-    
 
     // Update is called once per frame
     public void Dezoom()

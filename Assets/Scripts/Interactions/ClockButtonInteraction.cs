@@ -10,17 +10,21 @@ public class ClockButtonInteraction : InteractionBase
   public List<Sprite> changed_sprite;
 
   public bool positive;
+    ClockObjective zvuk;
 
-
+    private void Start()
+    {
+        zvuk = GetComponentInParent<ClockObjective>();
+    }
 
     public override void Interact()
   {
         base.Interact();
-   
-     
-       
-    
-    int number = int.Parse(sprite.sprite.name);
+        zvuk.mainSoundAudio.Play();
+
+
+
+        int number = int.Parse(sprite.sprite.name);
     if (positive)
     {
       if (number < 9)
