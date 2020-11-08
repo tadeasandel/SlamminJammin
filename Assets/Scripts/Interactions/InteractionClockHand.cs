@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class InteractionClockHand : InteractionBase
 {
+  public AudioClip cinkSound;
+  public AudioSource audioSource;
+
   public float RotationSpeed = 55;
   public bool isActive;
   public CameraRotation cameraRotation;
@@ -39,6 +43,7 @@ public class InteractionClockHand : InteractionBase
   public override void Awake()
   {
     base.Awake();
+    audioSource = GetComponent<AudioSource>();
     cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
     movementController = GameObject.Find("Player").GetComponent<MovementController>();
     rb = GameObject.Find("Player").GetComponent<Rigidbody>();
@@ -56,6 +61,7 @@ public class InteractionClockHand : InteractionBase
   {
     if (isActive) { return; }
     base.Interact();
+    audioSource.PlayOneShot(cinkSound);
     isActive = true;
     isDisabled = true;
     StartCoroutine(Switch());

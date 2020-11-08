@@ -18,5 +18,6 @@ public class SpriteSwitchButtonInteraction : SwitchInteraction
   {
     base.Interact();
     sprite.enabled = isActive;
+    isDisabled = true;
   }
 }
