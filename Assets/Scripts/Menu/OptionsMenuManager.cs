@@ -85,6 +85,7 @@ public class OptionsMenuManager : MonoBehaviour
     {
         if (zobrazenSipky == false)
         {
+            pauseMenu.SetActive(false);
             MenuControls.SetActive(true);
             backButton.SetActive(true);
             MenuControlsImage1.color = new Color(MenuControlsImage1.color.r, MenuControlsImage1.color.g, MenuControlsImage1.color.b, 1);
@@ -97,7 +98,8 @@ public class OptionsMenuManager : MonoBehaviour
         backButton.SetActive(false);
         MenuControls.SetActive(false);
         zobrazenSipky = false;
-      
+        pauseMenu.SetActive(true);
+
     }
 
 
