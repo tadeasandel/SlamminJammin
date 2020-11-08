@@ -8,6 +8,8 @@ public class ObjectivesManager : MonoBehaviour
 
   StateManager stateManager;
 
+  public bool isGameFinished;
+
   void Start()
   {
     foreach (MainObjectiveBase objective in mainObjectives)
@@ -27,11 +29,6 @@ public class ObjectivesManager : MonoBehaviour
         return;
       }
     }
-    FinishGame();
-  }
-
-  public void FinishGame()
-  {
-    Debug.LogError("game is finished");
+    isGameFinished = true;
   }
 }
