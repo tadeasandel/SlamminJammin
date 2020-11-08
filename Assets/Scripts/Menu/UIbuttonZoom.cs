@@ -13,7 +13,7 @@ public class UIbuttonZoom : MonoBehaviour
 
     public GameObject checkHandTwo;
     public bool isDone;
-    
+    public int kolo;
    
     
 
@@ -35,9 +35,12 @@ public class UIbuttonZoom : MonoBehaviour
 
     public void ok()
     {
-        Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.rotation.z);
+        Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.localEulerAngles.z);
         Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.localRotation.z);
-        if (checkHandOne.transform.rotation.z < -0.417f && checkHandOne.transform.rotation.z > -0.6f || checkHandOne.transform.rotation.z > 0.417f && checkHandOne.transform.rotation.z < 0.6f)
+
+        if (kolo==1)
+        {
+            if (checkHandOne.transform.rotation.z < -0.417f && checkHandOne.transform.rotation.z > -0.6f || checkHandOne.transform.rotation.z > 0.417f && checkHandOne.transform.rotation.z < 0.6f)
             {
                 if (checkHandTwo.transform.rotation.z > -0.095f && checkHandTwo.transform.rotation.z < -0.0722f || checkHandTwo.transform.rotation.z < 0.095f && checkHandTwo.transform.rotation.z > -0.0722)
                 {
@@ -49,10 +52,36 @@ public class UIbuttonZoom : MonoBehaviour
                     isDone = true;
                     dezoomScr.isDone = isDone;
 
+
                 }
 
 
+            }
+
         }
+        else // druhe kolo - to s šestkou
+        {
+            if (checkHandOne.transform.localEulerAngles.z < 190 && checkHandOne.transform.localEulerAngles.z > 170 )
+            {
+                if (checkHandTwo.transform.rotation.z > -0.095f && checkHandTwo.transform.rotation.z < -0.0722f || checkHandTwo.transform.rotation.z < 0.095f && checkHandTwo.transform.rotation.z > -0.0722)
+                {
+                    Debug.LogWarning("pozice ručičky" + checkHandOne.transform.rotation.z);
+                    for (int i = 0; i < btn.Count - 1; i++)
+                    {
+                        btn[i].SetActive(false);
+                    }
+                    isDone = true;
+                    dezoomScr.isDone = isDone;
+
+
+                }
+
+
+            }
+
+        }
+
+     
 
 
         

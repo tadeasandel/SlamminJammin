@@ -25,7 +25,7 @@ public class ClockObjective : ObjectiveBase
     {
         if (IsTimeCorect())
         {
-            
+           
             foreach (ClockButtonInteraction interaction in GetComponentsInChildren<ClockButtonInteraction>())
             {
                 interaction.isDisabled = true;

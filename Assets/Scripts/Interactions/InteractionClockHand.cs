@@ -159,7 +159,7 @@ public class InteractionClockHand : InteractionBase
       yield return null;
     }
     Debug.LogError("cor finished");
-
+        
     rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
     isActive = false;
     isDisabled = false;

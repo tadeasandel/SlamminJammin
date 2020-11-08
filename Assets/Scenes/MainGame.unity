@@ -1005,6 +1005,10 @@ PrefabInstance:
       propertyPath: checkHandTwo
       value: 
       objectReference: {fileID: 2113665594}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: kolo
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
@@ -1017,6 +1021,30 @@ PrefabInstance:
       propertyPath: Sipka
       value: 
       objectReference: {fileID: 2113665594}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 271100103}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3429655242722902773, guid: 5b8d1ab49708bce4c9e7b2da27614e4b,
         type: 3}
       propertyPath: m_Name
@@ -2166,6 +2194,10 @@ PrefabInstance:
       propertyPath: checkHandTwo
       value: 
       objectReference: {fileID: 1760783462}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: kolo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
@@ -2178,6 +2210,30 @@ PrefabInstance:
       propertyPath: Sipka
       value: 
       objectReference: {fileID: 1760783462}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 698569918}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834332155, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3429655242722902773, guid: 5b8d1ab49708bce4c9e7b2da27614e4b,
         type: 3}
       propertyPath: m_Name
