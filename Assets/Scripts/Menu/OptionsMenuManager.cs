@@ -18,6 +18,10 @@ public class OptionsMenuManager : MonoBehaviour
     bool showMenu;
     public GameObject backButton;
     bool zobrazenSipky;
+
+  MovementController movementController;
+  CameraRotation cameraRotation;
+  PlayerInteractionController interactionController;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -27,15 +31,26 @@ public class OptionsMenuManager : MonoBehaviour
         MenuControlsImage1 = GameObject.Find("Menu_ControlsImage1").GetComponent<Image>();
         MenuControlsImage2 = GameObject.Find("Menu_ControlsImage2").GetComponent<Image>();
         zobrazenSipky = false;
+    movementController = FindObjectOfType<MovementController>();
+    cameraRotation = FindObjectOfType<CameraRotation>();
+    interactionController = FindObjectOfType<PlayerInteractionController>();
     }
     void PauseGame()
     {
+    movementController.isMovementPaused = true;
+    cameraRotation.isRotationPaused = true;
+    interactionController.canInteract = false;
+    Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
 
     void ResumeGame()
     {
-        Time.timeScale = 1;
+    movementController.isMovementPaused = false;
+    cameraRotation.isRotationPaused = false;
+    interactionController.canInteract = true;
+    Cursor.lockState = CursorLockMode.Locked;
+    Time.timeScale = 1;
     }
     void Start()
     {
@@ -78,7 +93,7 @@ public class OptionsMenuManager : MonoBehaviour
     {
         if (zobrazenSipky == false)
         {
-            SceneManager.LoadScene("MainGame");
+            SceneManager.LoadScene("Intro");
         }
     }
     public void controlsMenu()
