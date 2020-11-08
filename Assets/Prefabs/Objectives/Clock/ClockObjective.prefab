@@ -1316,10 +1316,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isObjectiveDone: 0
   mainObjectiveBase: {fileID: 0}
-  clockOne: {fileID: 0}
-  clockTwo: {fileID: 0}
-  clockThree: {fileID: 0}
-  clockFour: {fileID: 0}
+  clockOne: {fileID: 2375685046459623213}
+  clockTwo: {fileID: 2375685046169748925}
+  clockThree: {fileID: 2375685045114744353}
+  clockFour: {fileID: 2375685046155666127}
   correctClockTime:
     firstDigit: 1
     secondDigit: 9

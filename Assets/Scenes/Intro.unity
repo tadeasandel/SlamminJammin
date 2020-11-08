@@ -674,6 +674,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68673c3ba50c272439b42a352a8fb8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  butons:
+  - {fileID: 271029257}
+  - {fileID: 1816379976}
+  - {fileID: 342002580}
   text_Newgame: {fileID: 1327810179}
   text_pressButton: {fileID: 1407861123}
   warning_text: {fileID: 1572068550}
