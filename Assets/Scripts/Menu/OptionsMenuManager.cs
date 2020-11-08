@@ -41,6 +41,7 @@ public class OptionsMenuManager : MonoBehaviour
     cameraRotation.isRotationPaused = true;
     interactionController.canInteract = false;
     Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
         Time.timeScale = 0;
     }
 
@@ -50,6 +51,7 @@ public class OptionsMenuManager : MonoBehaviour
     cameraRotation.isRotationPaused = false;
     interactionController.canInteract = true;
     Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
     Time.timeScale = 1;
     }
     void Start()
