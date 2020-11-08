@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public Image napisUI;
     public List<Button> butons;
     public TextMeshProUGUI text_Newgame;
     public TextMeshProUGUI text_pressButton;
@@ -31,11 +32,12 @@ public class MenuManager : MonoBehaviour
     Cursor.SetCursor(cursorTexture,new Vector2(50,50), CursorMode.ForceSoftware);
         firstStart = true;
         runFade = false;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < butons.Count; i++)
         {
             button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, 0);
             butons[i].enabled = false;
         }
+        napisUI.color = new Color(napisUI.color.r, napisUI.color.g, napisUI.color.b, 0);
     }
     void PlayClick()
     {
@@ -166,6 +168,7 @@ public class MenuManager : MonoBehaviour
                 button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, currentValue);
                
             }
+            napisUI.color = new Color(napisUI.color.r, napisUI.color.g, napisUI.color.b, currentValue);
             yield return null;
         }
         firstStart = false;
