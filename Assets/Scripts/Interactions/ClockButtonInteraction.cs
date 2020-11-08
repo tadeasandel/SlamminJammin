@@ -11,9 +11,15 @@ public class ClockButtonInteraction : InteractionBase
 
   public bool positive;
 
-  public override void Interact()
+
+
+    public override void Interact()
   {
-    base.Interact();
+        base.Interact();
+   
+     
+       
+    
     int number = int.Parse(sprite.sprite.name);
     if (positive)
     {

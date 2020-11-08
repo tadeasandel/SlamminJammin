@@ -21,7 +21,9 @@ public class ObjectiveClockHand : ObjectiveBase
     {
       isObjectiveDone = true;
       FinishObjective();
-    }
+           
+           
+        }
   }
 
 }
