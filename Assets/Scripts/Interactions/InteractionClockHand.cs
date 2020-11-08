@@ -120,7 +120,6 @@ public class InteractionClockHand : InteractionBase
     movementController.isMovementPaused = isActive;
     rb.freezeRotation = true;
     rb.constraints = RigidbodyConstraints.FreezeAll;
-    UnityEngine.Cursor.lockState = CursorLockMode.None;
 
     cachedCameraPosition = startPosition.position;
     cachedCameraRotation = startPosition.rotation;
@@ -136,6 +135,8 @@ public class InteractionClockHand : InteractionBase
       yield return null;
     }
 
+    UnityEngine.Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
     uIbuttonZoom.Zobraz();
   }
 
@@ -168,8 +169,8 @@ public class InteractionClockHand : InteractionBase
       startPosition.Translate(direction * Time.deltaTime * speed);
       yield return null;
     }
-    Debug.LogError("cor finished");
 
+    Cursor.visible = false;
     rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
     isActive = false;
     if (!isDone)

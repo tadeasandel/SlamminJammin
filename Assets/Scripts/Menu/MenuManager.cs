@@ -18,6 +18,8 @@ public class MenuManager : MonoBehaviour
 
     public List<Image> button;
 
+  public Texture2D cursorTexture;
+
   public AudioSource mainSoundAudio;
 
   public AudioClip[] hahaSounds;
@@ -27,6 +29,7 @@ public class MenuManager : MonoBehaviour
     protected bool runFade;
     void Start()
     {
+    Cursor.SetCursor(cursorTexture,new Vector2(50,50), CursorMode.ForceSoftware);
         firstStart = true;
        
         for (int i = 0; i < 3; i++)

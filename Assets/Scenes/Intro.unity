@@ -743,6 +743,7 @@ MonoBehaviour:
   - {fileID: 271029258}
   - {fileID: 1816379977}
   - {fileID: 342002581}
+  cursorTexture: {fileID: 2800000, guid: 22263300ebb0830438ca1ccd5215858c, type: 3}
   mainSoundAudio: {fileID: 1264803532}
   hahaSounds:
   - {fileID: 8300000, guid: 0d6aa207c58bc0c47b0562ea3597e004, type: 3}
