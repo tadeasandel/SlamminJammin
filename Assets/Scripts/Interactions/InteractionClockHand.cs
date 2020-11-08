@@ -33,7 +33,10 @@ public class InteractionClockHand : InteractionBase
   public float speed = 1.05f;
   public float distanceLimit = 1.0f;
 
-  public override void Awake()
+    public GameObject btnVisibleThis;
+    public GameObject btnVisibleOther;
+
+    public override void Awake()
   {
     base.Awake();
     cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
@@ -60,7 +63,9 @@ public class InteractionClockHand : InteractionBase
 
   IEnumerator FadeIn(float startValue, float endValue)
   {
-    float currentValue = startValue;
+        btnVisibleThis.SetActive(true);
+        btnVisibleOther.SetActive(false);
+        float currentValue = startValue;
 
     while (currentValue <= endValue)
     {
@@ -120,8 +125,7 @@ public class InteractionClockHand : InteractionBase
       startPosition.LookAt(lookTarget);
       yield return null;
     }
-    uIbuttonZoom.clock = hodiny;
-    uIbuttonZoom.selectClock();
+   
     uIbuttonZoom.Zobraz();
   }
 

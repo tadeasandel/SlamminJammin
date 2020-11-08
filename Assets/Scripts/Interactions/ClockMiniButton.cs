@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClockMiniButton : MonoBehaviour
 {
-    public List<GameObject> SipkaVer;
+   
     public GameObject Sipka;
 
     public int clock;
@@ -17,13 +17,13 @@ public class ClockMiniButton : MonoBehaviour
     {
         if (!ispressed)
             return;
-        SipkaVer[clock].transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
+        Sipka.transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
         Debug.Log("Pressed");
     }
     bool ispressed = false;
     public void OnPointerDown()
     {
-        clock = GetComponentInParent<UIbuttonZoom>().clock;
+        
         ispressed = true;
     }
 
@@ -37,12 +37,8 @@ public class ClockMiniButton : MonoBehaviour
     public void Doleva()
     {
         Debug.LogWarning("Doleve");
-        SipkaVer[clock].transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
+        Sipka.transform.Rotate(0, 0, (Distance * RotationSpeed * Time.deltaTime), Space.World);
     }
 
-    void selectClock()
-    {
-        Sipka = SipkaVer[clock];
-   
-    }
+ 
 }

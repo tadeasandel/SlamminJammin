@@ -941,6 +941,10 @@ PrefabInstance:
       propertyPath: SipkaVer.Array.data[1]
       value: 
       objectReference: {fileID: 2113665593}
+    - target: {fileID: 404941500, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
+      value: 
+      objectReference: {fileID: 2113665593}
     - target: {fileID: 460995472, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
@@ -949,12 +953,20 @@ PrefabInstance:
       propertyPath: SipkaVer.Array.data[1]
       value: 
       objectReference: {fileID: 2113665593}
+    - target: {fileID: 460995472, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
+      value: 
+      objectReference: {fileID: 2113665593}
     - target: {fileID: 483617303, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
       objectReference: {fileID: 1760783462}
     - target: {fileID: 483617303, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[1]
+      value: 
+      objectReference: {fileID: 2113665594}
+    - target: {fileID: 483617303, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
       value: 
       objectReference: {fileID: 2113665594}
     - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
@@ -981,12 +993,28 @@ PrefabInstance:
       propertyPath: checkHandTwoVar.Array.data[1]
       value: 
       objectReference: {fileID: 2113665594}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: dezoomScr
+      value: 
+      objectReference: {fileID: 2113665595}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: checkHandOne
+      value: 
+      objectReference: {fileID: 2113665593}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: checkHandTwo
+      value: 
+      objectReference: {fileID: 2113665594}
     - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
       objectReference: {fileID: 1760783462}
     - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[1]
+      value: 
+      objectReference: {fileID: 2113665594}
+    - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
       value: 
       objectReference: {fileID: 2113665594}
     - target: {fileID: 3429655242722902773, guid: 5b8d1ab49708bce4c9e7b2da27614e4b,
@@ -1185,7 +1213,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 271100095}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1258479866}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 314b48abac7921b4e8953a4457c23408, type: 3}
@@ -2074,6 +2102,10 @@ PrefabInstance:
       propertyPath: SipkaVer.Array.data[1]
       value: 
       objectReference: {fileID: 2113665593}
+    - target: {fileID: 404941500, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
+      value: 
+      objectReference: {fileID: 1760783463}
     - target: {fileID: 460995472, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
@@ -2082,6 +2114,10 @@ PrefabInstance:
       propertyPath: SipkaVer.Array.data[1]
       value: 
       objectReference: {fileID: 2113665593}
+    - target: {fileID: 460995472, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
+      value: 
+      objectReference: {fileID: 1760783463}
     - target: {fileID: 483617303, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
@@ -2090,6 +2126,10 @@ PrefabInstance:
       propertyPath: SipkaVer.Array.data[1]
       value: 
       objectReference: {fileID: 2113665594}
+    - target: {fileID: 483617303, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
+      value: 
+      objectReference: {fileID: 1760783462}
     - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: dezoomScrVar.Array.data[0]
       value: 
@@ -2114,6 +2154,18 @@ PrefabInstance:
       propertyPath: checkHandTwoVar.Array.data[1]
       value: 
       objectReference: {fileID: 2113665594}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: dezoomScr
+      value: 
+      objectReference: {fileID: 1760783464}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: checkHandOne
+      value: 
+      objectReference: {fileID: 1760783463}
+    - target: {fileID: 836883893, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: checkHandTwo
+      value: 
+      objectReference: {fileID: 1760783462}
     - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
       propertyPath: SipkaVer.Array.data[0]
       value: 
@@ -2122,6 +2174,10 @@ PrefabInstance:
       propertyPath: SipkaVer.Array.data[1]
       value: 
       objectReference: {fileID: 2113665594}
+    - target: {fileID: 1469168344, guid: 5b8d1ab49708bce4c9e7b2da27614e4b, type: 3}
+      propertyPath: Sipka
+      value: 
+      objectReference: {fileID: 1760783462}
     - target: {fileID: 3429655242722902773, guid: 5b8d1ab49708bce4c9e7b2da27614e4b,
         type: 3}
       propertyPath: m_Name
@@ -2318,7 +2374,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 698569910}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1991152769}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 314b48abac7921b4e8953a4457c23408, type: 3}
@@ -3558,6 +3614,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4b1cbb1a2173b43a65ce5531f7cc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1258479866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3429655242722902773, guid: 5b8d1ab49708bce4c9e7b2da27614e4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 271100095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263812408
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,6 +5079,16 @@ PrefabInstance:
       propertyPath: btn.Array.data[5]
       value: 
       objectReference: {fileID: 698569912}
+    - target: {fileID: 6322328221912198912, guid: da456ae8908725245a8f6a8b968980b6,
+        type: 3}
+      propertyPath: btnVisibleThis
+      value: 
+      objectReference: {fileID: 1991152769}
+    - target: {fileID: 6322328221912198912, guid: da456ae8908725245a8f6a8b968980b6,
+        type: 3}
+      propertyPath: btnVisibleOther
+      value: 
+      objectReference: {fileID: 1258479866}
     - target: {fileID: 7048926260369791166, guid: da456ae8908725245a8f6a8b968980b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5109,6 +5181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59bf196f9143314c8bf3696b3508562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1991152769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3429655242722902773, guid: 5b8d1ab49708bce4c9e7b2da27614e4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 698569910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010859356
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,6 +6873,16 @@ PrefabInstance:
       propertyPath: uIbuttonZoom
       value: 
       objectReference: {fileID: 271100103}
+    - target: {fileID: 6322328221912198912, guid: da456ae8908725245a8f6a8b968980b6,
+        type: 3}
+      propertyPath: btnVisibleThis
+      value: 
+      objectReference: {fileID: 1258479866}
+    - target: {fileID: 6322328221912198912, guid: da456ae8908725245a8f6a8b968980b6,
+        type: 3}
+      propertyPath: btnVisibleOther
+      value: 
+      objectReference: {fileID: 1991152769}
     - target: {fileID: 7048926260369791166, guid: da456ae8908725245a8f6a8b968980b6,
         type: 3}
       propertyPath: m_LocalPosition.x
