@@ -25,13 +25,13 @@ public class MenuManager : MonoBehaviour
   public AudioClip[] hahaSounds;
     public AudioClip click;
     public AudioClip sramot_sound;
-    protected bool firstStart;
-    protected bool runFade;
+     bool firstStart;
+    bool runFade;
     void Start()
     {
     Cursor.SetCursor(cursorTexture,new Vector2(50,50), CursorMode.ForceSoftware);
         firstStart = true;
-       
+        runFade = false;
         for (int i = 0; i < 3; i++)
         {
             button[i].color = new Color(button[i].color.r, button[i].color.g, button[i].color.b, 0);
@@ -97,6 +97,7 @@ public class MenuManager : MonoBehaviour
         
         if (Input.anyKeyDown && runFade==false)
         {
+            Debug.LogError("bezi");
           if (Input.anyKeyDown && firstStart)
           {
                     runFade = true;
