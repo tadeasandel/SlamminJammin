@@ -69,6 +69,7 @@ public class UIbuttonZoom : MonoBehaviour
                     }
                     isDone[clock] = true;
                     dezoomScr.isDone = isDone[clock];
+
                 }
 
 
@@ -89,6 +90,11 @@ public class UIbuttonZoom : MonoBehaviour
                     }
                     isDone[clock] = true;
                     dezoomScr.isDone = isDone[clock];
+                    //dezoomScr.isDisabled = true;
+
+
+                  
+
                 }
 
 

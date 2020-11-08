@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 
@@ -38,6 +39,7 @@ public class InteractionClockHand : InteractionBase
     //cameraTarget = GameObject.Find("CameraZoomPosition");
       
     }
+  
 
   public override void Interact()
   {
@@ -56,6 +58,8 @@ public class InteractionClockHand : InteractionBase
 
 
   }
+
+    
     IEnumerator FadeIn(float startValue, float endValue)
     {
         float currentValue = startValue;
@@ -174,7 +178,6 @@ public class InteractionClockHand : InteractionBase
     }
 
 
- 
 
 
 }

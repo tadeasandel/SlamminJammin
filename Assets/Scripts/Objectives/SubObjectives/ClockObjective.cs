@@ -21,6 +21,20 @@ public class ClockObjective : ObjectiveBase
     clockInteraction = GetComponent<ClockInteraction>();
   }
 
+    private void Update()
+    {
+        if (IsTimeCorect())
+        {
+            
+            foreach (ClockButtonInteraction interaction in GetComponentsInChildren<ClockButtonInteraction>())
+            {
+                interaction.isDisabled = true;
+                //isdisabled;
+            }
+            FinishObjective();
+        }
+    }
+
     public bool IsTimeCorect()
     {
         if (correctClockTime.firstDigit == int.Parse(clockOne.sprite.name) &&
