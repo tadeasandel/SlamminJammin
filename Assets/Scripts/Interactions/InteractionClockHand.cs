@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-
 public class InteractionClockHand : InteractionBase
 {
   public float RotationSpeed = 55;
@@ -14,6 +13,7 @@ public class InteractionClockHand : InteractionBase
   protected Rigidbody rb;
   public float minimalRotation;
   public float maximalRotation;
+  public ObjectiveClockHand clockObjective;
 
   public UIbuttonZoom uIbuttonZoom;
 
@@ -33,16 +33,23 @@ public class InteractionClockHand : InteractionBase
   public float speed = 1.05f;
   public float distanceLimit = 1.0f;
 
-    public GameObject btnVisibleThis;
-    public GameObject btnVisibleOther;
+  public GameObject btnVisibleThis;
+  public GameObject btnVisibleOther;
 
-    public override void Awake()
+  public override void Awake()
   {
     base.Awake();
     cameraRotation = GameObject.Find("Player").GetComponent<CameraRotation>();
     movementController = GameObject.Find("Player").GetComponent<MovementController>();
     rb = GameObject.Find("Player").GetComponent<Rigidbody>();
     Maincamera = GameObject.Find("Main Camera");
+    clockObjective = GetComponent<ObjectiveClockHand>();
+  }
+
+  public void FinishObjective()
+  {
+    isDisabled = true;
+    clockObjective.FinishObjective();
   }
 
   public override void Interact()
@@ -63,9 +70,9 @@ public class InteractionClockHand : InteractionBase
 
   IEnumerator FadeIn(float startValue, float endValue)
   {
-        btnVisibleThis.SetActive(true);
-        btnVisibleOther.SetActive(false);
-        float currentValue = startValue;
+    btnVisibleThis.SetActive(true);
+    btnVisibleOther.SetActive(false);
+    float currentValue = startValue;
 
     while (currentValue <= endValue)
     {
@@ -78,8 +85,6 @@ public class InteractionClockHand : InteractionBase
       yield return null;
     }
   }
-
-
 
   IEnumerator FadeOut(float startValue, float endValue)
   {
@@ -98,11 +103,10 @@ public class InteractionClockHand : InteractionBase
     }
   }
 
-
   public override bool IsUsed()
   {
     return false;
-  }  
+  }
 
   IEnumerator CameraZoom(Transform startPosition, Transform endPosition)
   {
@@ -125,7 +129,7 @@ public class InteractionClockHand : InteractionBase
       startPosition.LookAt(lookTarget);
       yield return null;
     }
-   
+
     uIbuttonZoom.Zobraz();
   }
 
@@ -159,19 +163,18 @@ public class InteractionClockHand : InteractionBase
       yield return null;
     }
     Debug.LogError("cor finished");
-        
+
     rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
     isActive = false;
-    isDisabled = false;
-    startPosition.localPosition = new Vector3(0,0,0);
-    startPosition.rotation = Quaternion.Euler(0,0,0);
+    if (!isDone)
+    {
+      isDisabled = false;
+    }
+    startPosition.localPosition = new Vector3(0, 0, 0);
+    startPosition.rotation = Quaternion.Euler(0, 0, 0);
 
     cameraRotation.isRotationPaused = false;
     movementController.isMovementPaused = false;
     Cursor.lockState = CursorLockMode.Locked;
   }
-
-
-
-
 }

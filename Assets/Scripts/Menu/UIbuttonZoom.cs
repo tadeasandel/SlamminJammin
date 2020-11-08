@@ -4,103 +4,63 @@ using UnityEngine;
 
 public class UIbuttonZoom : MonoBehaviour
 {
-    public List<GameObject> btn;
-    
-    public InteractionClockHand dezoomScr;
+  public List<GameObject> btn;
 
-    
-    public GameObject checkHandOne;
+  public InteractionClockHand clockInteraction;
 
-    public GameObject checkHandTwo;
-    public bool isDone;
-    public int kolo;
+  public GameObject checkHandOne;
 
-    public AudioSource mainSoundAudio;
-    public AudioClip click;
+  public GameObject checkHandTwo;
+  public bool isDone;
+  public int kolo;
 
+  public AudioSource mainSoundAudio;
+  public AudioClip click;
 
-
-
-    // Update is called once per frame
-    public void Dezoom()
+  public void Dezoom()
+  {
+    if (!isDone)
     {
-        if (!isDone)
-        {
-            checkHandOne.transform.rotation = new Quaternion(checkHandOne.transform.rotation.x, checkHandOne.transform.rotation.y,0, checkHandOne.transform.rotation.w) ;
-            checkHandTwo.transform.rotation = new Quaternion(checkHandTwo.transform.rotation.x, checkHandTwo.transform.rotation.y, 0, checkHandTwo.transform.rotation.w);
-
-        }
-        dezoomScr.ZoomBack();
+      checkHandOne.transform.rotation = new Quaternion(checkHandOne.transform.rotation.x, checkHandOne.transform.rotation.y, 0, checkHandOne.transform.rotation.w);
     }
+    clockInteraction.ZoomBack();
+  }
 
-    public void ok()
+  public void ok()
+  {
+    if (kolo == 1)
     {
-        Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.localEulerAngles.z);
-        Debug.LogWarning("pozice ručičky klask" + checkHandOne.transform.localRotation.z);
-
-        if (kolo==1)
+      if (checkHandOne.transform.rotation.z < -0.417f && checkHandOne.transform.rotation.z > -0.6f || checkHandOne.transform.rotation.z > 0.417f && checkHandOne.transform.rotation.z < 0.6f)
+      {
+        for (int i = 0; i < btn.Count - 1; i++)
         {
-            if (checkHandOne.transform.rotation.z < -0.417f && checkHandOne.transform.rotation.z > -0.6f || checkHandOne.transform.rotation.z > 0.417f && checkHandOne.transform.rotation.z < 0.6f)
-            {
-                if (checkHandTwo.transform.rotation.z > -0.095f && checkHandTwo.transform.rotation.z < -0.0722f || checkHandTwo.transform.rotation.z < 0.095f && checkHandTwo.transform.rotation.z > -0.0722)
-                {
-                    Debug.LogWarning("pozice ručičky" + checkHandOne.transform.rotation.z);
-                    for (int i = 0; i < btn.Count - 1; i++)
-                    {
-                        btn[i].SetActive(false);
-                    }
-                    isDone = true;
-                    dezoomScr.isDone = isDone;
-
-
-                }
-
-
-            }
-
+          btn[i].SetActive(false);
         }
-        else // druhe kolo - to s šestkou
-        {
-            if (checkHandOne.transform.localEulerAngles.z < 190 && checkHandOne.transform.localEulerAngles.z > 170 )
-            {
-                if (checkHandTwo.transform.rotation.z > -0.095f && checkHandTwo.transform.rotation.z < -0.0722f || checkHandTwo.transform.rotation.z < 0.095f && checkHandTwo.transform.rotation.z > -0.0722)
-                {
-                    Debug.LogWarning("pozice ručičky" + checkHandOne.transform.rotation.z);
-                    for (int i = 0; i < btn.Count - 1; i++)
-                    {
-                        btn[i].SetActive(false);
-                    }
-                    isDone = true;
-                    dezoomScr.isDone = isDone;
-
-
-                }
-
-
-            }
-
-        }
-
-     
-
-
-        
-       
-
-
-
+        isDone = true;
+        clockInteraction.isDone = isDone;
+        clockInteraction.isDisabled = isDone;
+      }
     }
-    private void Update()
+    else // druhe kolo - to s šestkou
     {
-      //  Debug.LogWarning("pozice ručičkyVelke" + checkHandTwo.transform.rotation.z);
-      // Debug.LogWarning("pozice ručičkyMAle" + checkHandTwo.transform.rotation.z);
-    }
-    public void Zobraz() 
-    {
-        for (int i = 0; i < btn.Count; i++)
+      if (checkHandOne.transform.localEulerAngles.z < 190 && checkHandOne.transform.localEulerAngles.z > 170)
+      {
+        for (int i = 0; i < btn.Count - 1; i++)
         {
-            btn[i].SetActive(true);
+          btn[i].SetActive(false);
         }
+        isDone = true;
+        clockInteraction.isDone = isDone;
+        clockInteraction.isDisabled = isDone;
+      }
     }
+  }
 
+  public void Zobraz()
+  {
+    for (int i = 0; i < btn.Count; i++)
+    {
+      btn[i].SetActive(true);
+    }
+  }
 }
