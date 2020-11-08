@@ -21,7 +21,8 @@ public class MenuManager : MonoBehaviour
   public AudioSource mainSoundAudio;
 
   public AudioClip[] hahaSounds;
-    public AudioClip click; 
+    public AudioClip click;
+    public AudioClip sramot_sound;
     protected bool firstStart;
     protected bool runFade;
     void Start()
@@ -57,17 +58,22 @@ public class MenuManager : MonoBehaviour
         }
        
     }
+    public void soundPointer()
+    {
+        mainSoundAudio.PlayOneShot(sramot_sound);
+    }
     public void Button_Option_pointer()
     {
         if (firstStart==false)
         {
-           
+            mainSoundAudio.PlayOneShot(sramot_sound);
             warning_text.SetActive(true);
         }
         
     }
     public void Button_Option_pointer_exit()
     {
+        mainSoundAudio.Stop();
         warning_text.SetActive(false);
 
     }
