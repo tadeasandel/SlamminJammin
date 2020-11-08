@@ -12,7 +12,8 @@ public class ObjectiveClockHand : ObjectiveBase
   {
     base.InitObjective(mainObjectiveBase);
     interactionClockHand = GetComponent<InteractionClockHand>();
-  }
+        
+    }
   public void Update()
   {
     if (!gameObject.activeSelf) { return; }
@@ -20,9 +21,15 @@ public class ObjectiveClockHand : ObjectiveBase
     if (interactionClockHand.isDone)
     {
       isObjectiveDone = true;
+
+          
+
+
       FinishObjective();
            
-           
+
+        
+
         }
   }
 
