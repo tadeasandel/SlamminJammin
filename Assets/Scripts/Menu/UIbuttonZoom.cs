@@ -27,8 +27,6 @@ public class UIbuttonZoom : MonoBehaviour
         {
             isDone[i] = false;
         }
-       
-
     }
 
     public void selectClock()
@@ -48,7 +46,7 @@ public class UIbuttonZoom : MonoBehaviour
             checkHandTwo.transform.rotation = new Quaternion(checkHandTwo.transform.rotation.x, checkHandTwo.transform.rotation.y, 0, checkHandTwo.transform.rotation.w);
 
         }
-        dezoomScr.Dezoom();
+        dezoomScr.ZoomBack();
     }
 
     public void ok()
@@ -112,7 +110,7 @@ public class UIbuttonZoom : MonoBehaviour
     }
     public void Zobraz() 
     {
-        for (int i = 0; i < btn.Count - 1; i++)
+        for (int i = 0; i < btn.Count; i++)
         {
             btn[i].SetActive(true);
         }
