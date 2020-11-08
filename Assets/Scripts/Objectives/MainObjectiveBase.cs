@@ -11,9 +11,12 @@ public class MainObjectiveBase : MonoBehaviour
 
   private ObjectivesManager objectivesManager;
 
+  public GameObject onCompletionTrigger;
+
   public virtual void InitObjective(ObjectivesManager objectivesManager)
   {
     this.objectivesManager = objectivesManager;
+    onCompletionTrigger.SetActive(false);
     foreach (ObjectiveBase objective in subObjectives)
     {
       objective.InitObjective(this);
@@ -35,6 +38,7 @@ public class MainObjectiveBase : MonoBehaviour
   public virtual void FinishObjective()
   {
     isMainObjectiveCompleted = true;
+    onCompletionTrigger.SetActive(true);
     objectivesManager.CheckObjectives();
   }
 }
