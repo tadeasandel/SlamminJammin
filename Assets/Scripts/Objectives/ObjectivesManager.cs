@@ -12,6 +12,7 @@ public class ObjectivesManager : MonoBehaviour
 
   void Start()
   {
+    Cursor.visible = false;
     foreach (MainObjectiveBase objective in mainObjectives)
     {
       objective.InitObjective(this);

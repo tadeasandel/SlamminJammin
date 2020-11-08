@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
     protected bool runFade;
     void Start()
     {
-    Cursor.SetCursor(cursorTexture,Vector2.zero, CursorMode.ForceSoftware);
+    Cursor.SetCursor(cursorTexture,new Vector2(50,50), CursorMode.ForceSoftware);
         firstStart = true;
        
         for (int i = 0; i < 3; i++)
